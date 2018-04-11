@@ -1,0 +1,23 @@
+-- Defines file:
+-- BASE_FACTORY_SPEED_MIL and _NAV, -25% each. This is to increase the relative importance of resources.
+-- Non-core manpower: 2% -> 4%
+-- Made low manpower warning less prevalent (Shows when mp left is 10% of army mp)
+
+-- Economic file:
+-- 
+
+-- Buildings file:
+-- Arms factory and dockyard 20% cheaper
+-- (Not 25 because 20% cheaper factories means 25% more of them)
+-- Max refinery level: 3 -> 5
+
+-- Tech file:
+-- 5% more slots for every level of concentrated + dispersed industry
+
+-- To Do
+-- Lower non-core factories? If possible
+-- Same with resources (80 or 90%)
+-- Econ laws - in progress
+-- Add dockyards to economy laws effects, probably
+
+-- There's an INFRASTRUCTURE_RESOURCE_BONUS in defines
