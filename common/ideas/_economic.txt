@@ -11,12 +11,11 @@ ideas = {
 			removal_cost = -1
 		
 			modifier = {
-				consumer_goods_factor = 0.1
-				production_speed_buildings_factor = -0.5
-				production_speed_arms_factory_factor = -0.5
-				production_speed_dockyard_factor = -0.5
-				conversion_cost_civ_to_mil_factor = 0.5
-				conversion_cost_mil_to_civ_factor = 0.5
+				consumer_goods_factor = 0.35
+				production_speed_buildings_factor = -0.6
+				production_speed_arms_factory_factor = -0.6
+				production_speed_dockyard_factor = -0.6
+				conversion_cost_civ_to_mil_factor = 0.6
 				generate_wargoal_tension = 1.00
 				join_faction_tension = 0.20
 				lend_lease_tension = 0.50
@@ -44,12 +43,11 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
-				consumer_goods_factor = 0.15
-				production_speed_buildings_factor = -0.4
-				production_speed_arms_factory_factor = -0.4
-				production_speed_dockyard_factor = -0.4
-				conversion_cost_civ_to_mil_factor= 0.4
-				conversion_cost_mil_to_civ_factor = 0.4
+				consumer_goods_factor = 0.3
+				production_speed_buildings_factor = -0.5
+				production_speed_arms_factory_factor = -0.5
+				production_speed_dockyard_factor = -0.5
+				conversion_cost_civ_to_mil_factor= 0.5
 				generate_wargoal_tension = 1.00
 				join_faction_tension = 0.20
 				send_volunteers_tension = 0.20
@@ -72,12 +70,11 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
-				consumer_goods_factor = 0.2
+				consumer_goods_factor = 0.25
 				production_speed_buildings_factor = -0.3
 				production_speed_arms_factory_factor = -0.3
 				production_speed_dockyard_factor = -0.3
 				conversion_cost_civ_to_mil_factor= 0.3
-				conversion_cost_mil_to_civ_factor = 0.3
 			}
 			
 			default = yes
@@ -144,7 +141,7 @@ ideas = {
 			modifier = {
 				political_power_factor = -0.1
 				consumer_goods_factor = 0.25
-				production_speed_buildings_factor = 0.1
+				production_speed_buildings_factor = 0.05
 				production_speed_arms_factory_factor = 0.05
 				production_speed_dockyard_factor = 0.05
 				conversion_cost_civ_to_mil_factor= -0.05
@@ -199,11 +196,11 @@ ideas = {
 				conscription = -0.01
 				political_power_factor = -0.2
 				stability_factor = -0.05
-				consumer_goods_factor = 0.3
+				consumer_goods_factor = 0.25
 				production_speed_buildings_factor = 0.2
-				production_speed_arms_factory_factor = 0.15
-				production_speed_dockyard_factor = 0.15
-				conversion_cost_civ_to_mil_factor= -0.15
+				production_speed_arms_factory_factor = 0.2
+				production_speed_dockyard_factor = 0.2
+				conversion_cost_civ_to_mil_factor= -0.2
 			}
 			
 			cancel_if_invalid = no
@@ -274,11 +271,11 @@ ideas = {
 				conscription = -0.03
 				political_power_factor = -0.4
 				stability_factor = -0.1
-				consumer_goods_factor = 0.35
+				consumer_goods_factor = 0.25
 				production_speed_buildings_factor = 0.4
-				production_speed_arms_factory_factor = 0.25
-				production_speed_dockyard_factor = 0.25
-				conversion_cost_civ_to_mil_factor= -0.25
+				production_speed_arms_factory_factor = 0.4
+				production_speed_dockyard_factor = 0.4
+				conversion_cost_civ_to_mil_factor= -0.4
 			}
 			
 			cancel_if_invalid = no

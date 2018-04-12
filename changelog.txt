@@ -1,6 +1,7 @@
 -- Defines file:
 -- BASE_FACTORY_SPEED_MIL and _NAV -25% each. 
--- PRODUCTION_RESOURCE_LACK_PENALTY: 5% -> 10%
+-- PRODUCTION_RESOURCE_LACK_PENALTY: 5% -> 20%
+-- Max resource lack penalty: 90% -> 100%
 -- Non-core manpower: 2% -> 4%
 -- Made low manpower warning less prevalent (Shows when mp left is 10% of army mp)
 
