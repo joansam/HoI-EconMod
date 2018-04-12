@@ -1,10 +1,11 @@
 -- Defines file:
--- BASE_FACTORY_SPEED_MIL and _NAV, -25% each. This is to increase the relative importance of resources.
+-- BASE_FACTORY_SPEED_MIL and _NAV -25% each. 
+-- PRODUCTION_RESOURCE_LACK_PENALTY: 5% -> 10%
 -- Non-core manpower: 2% -> 4%
 -- Made low manpower warning less prevalent (Shows when mp left is 10% of army mp)
 
 -- Economic file:
--- 
+-- Redid economy laws - now arming tends to increase build speed but decrease factories
 
 -- Buildings file:
 -- Arms factory and dockyard 20% cheaper
