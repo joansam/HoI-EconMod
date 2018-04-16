@@ -11,11 +11,9 @@ ideas = {
 			removal_cost = -1
 		
 			modifier = {
-				consumer_goods_factor = 0.50
-				production_speed_industrial_complex_factor = -0.5
-				production_speed_arms_factory_factor = -0.5
-				conversion_cost_civ_to_mil_factor = 0.5
-				conversion_cost_mil_to_civ_factor = 0.5
+				consumer_goods_factor = 0.4
+				political_power_factor = 0.4
+				production_speed_buildings_factor = -1.0
 				generate_wargoal_tension = 1.00
 				join_faction_tension = 0.20
 				lend_lease_tension = 0.50
@@ -43,11 +41,9 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
-				consumer_goods_factor = 0.4
-				production_speed_industrial_complex_factor = -0.4
-				production_speed_arms_factory_factor = -0.4
-				conversion_cost_civ_to_mil_factor= 0.4
-				conversion_cost_mil_to_civ_factor = 0.4
+				consumer_goods_factor = 0.35
+				political_power_factor = 0.3
+				production_speed_buildings_factor = -0.8
 				generate_wargoal_tension = 1.00
 				join_faction_tension = 0.20
 				send_volunteers_tension = 0.20
@@ -70,20 +66,14 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
-				consumer_goods_factor = 0.35
-				production_speed_industrial_complex_factor = -0.3
-				production_speed_arms_factory_factor = -0.3
-				conversion_cost_civ_to_mil_factor= 0.3
-				conversion_cost_mil_to_civ_factor = 0.3
+				consumer_goods_factor = 0.3
+				political_power_factor = 0.2
+				production_speed_buildings_factor = -0.6
 			}
 			
 			default = yes
 			
 			cancel_if_invalid = no
-			
-			ai_will_do = {
-   				factor = 0
-   			}
 		}
 		
 		low_economic_mobilisation = {
@@ -99,19 +89,25 @@ ideas = {
 				}	
 			}
 			
-			cost = 150
+			cost = 100
 			removal_cost = -1
 			
 			modifier = {
-				consumer_goods_factor = 0.3
-				production_speed_industrial_complex_factor = -0.1
-				production_speed_arms_factory_factor = -0.1
+				consumer_goods_factor = 0.25
+				political_power_factor = 0.1
+				production_speed_buildings_factor = -0.3
 			}
 			
 			cancel_if_invalid = no
 
 			ai_will_do = {
-   				factor = 0
+   				factor = 2
+
+   				modifier = {
+					factor = 20
+					
+					is_major = yes
+				}
    			}
 		}
 		
@@ -132,40 +128,24 @@ ideas = {
 				}
 			}
 
-			cost = 150
+			cost = 100
 			removal_cost = -1
 			
 			modifier = {
+				political_power_factor = -0.1
 				consumer_goods_factor = 0.25
-				production_speed_arms_factory_factor = 0.1
-				conversion_cost_civ_to_mil_factor= -0.1
-				conversion_cost_mil_to_civ_factor = -0.1
+				# production_speed_buildings_factor = 0.1
 			}
 			
 			cancel_if_invalid = no
 
 			ai_will_do = {
-   				factor = 100000
-				
-				modifier = {
-					factor = 0
+   				factor = 3
+
+   				modifier = {
+					factor = 20
 					
-					NOT = {
-						AND = {
-							EAI_can_take_partial_economic_mobilisation = yes
-							
-							OR = {
-								AND = {
-									has_war = yes
-									
-									NOT = { EAI_can_upgrade_manpower_law = yes }
-								}
-								AND = {
-									has_war = no
-								}
-							}
-						}
-					}
+					is_major = yes
 				}
    			}
 		}
@@ -199,40 +179,26 @@ ideas = {
 				}		
 			}
 		
-			cost = 150
+			cost = 100
 			removal_cost = -1
 			
 			modifier = {
+				conscription = -0.03
+				political_power_factor = -0.2
+				stability_factor = -0.05
 				consumer_goods_factor = 0.2
-				production_speed_arms_factory_factor = 0.2
-				conversion_cost_civ_to_mil_factor= -0.2
-				conversion_cost_mil_to_civ_factor = -0.2
+				production_speed_buildings_factor = 0.5
 			}
 			
 			cancel_if_invalid = no
 			
 			ai_will_do = {
-   				factor = 100000
-				
+   				factor = 5
+
 				modifier = {
-					factor = 0
-					
-					NOT = {
-						AND = {
-							EAI_can_take_war_economy = yes
-							
-							OR = {
-								AND = {
-									has_war = yes
-									
-									NOT = { EAI_can_upgrade_manpower_law = yes }
-								}
-								AND = {
-									has_war = no
-								}
-							}
-						}
-					}
+					#High prio on production
+					factor = 20
+					manpower_per_military_factory >  1000
 				}
    			}
 		}
@@ -258,44 +224,46 @@ ideas = {
 					NOT = { has_idea = HUN_treaty_of_triannon }
 				}
 			}
+
+			ai_will_do = {
+   				factor = 1
+
+				modifier = {
+					factor = 25
+					#Prio this if nation has a lot of manpower compared to MIC
+					manpower_per_military_factory >  10000
+				}
+
+				modifier = {
+					#Block  unless nation has a lot of manpower
+					factor = 0
+					manpower_per_military_factory <  3000
+				}
+
+				
+				modifier = {
+					# never take this if we are on low conscription laws for safety
+					factor = 0
+					OR = {
+						has_idea = volunteer_only
+						has_idea = limited_conscription
+					}
+				}				
+   			}
 			
-			cost = 150
+			cost = 100
 			removal_cost = -1
 			
 			modifier = {
-				consumer_goods_factor = 0.10
-				conscription = -0.03
-				production_speed_arms_factory_factor = 0.3
-				conversion_cost_civ_to_mil_factor= -0.3
-				conversion_cost_mil_to_civ_factor = -0.3
+				conscription = -0.06
+				political_power_factor = -0.4
+				stability_factor = -0.1
+				consumer_goods_factor = 0.1
+				production_speed_buildings_factor = 0.8
+
 			}
 			
 			cancel_if_invalid = no
-			
-			ai_will_do = {
-   				factor = 100000
-				
-				modifier = {
-					factor = 0
-					
-					NOT = {
-						AND = {
-							EAI_can_take_tot_economic_mobilisation = yes
-							
-							OR = {
-								AND = {
-									has_war = yes
-									
-									NOT = { EAI_can_upgrade_manpower_law = yes }
-								}
-								AND = {
-									has_war = no
-								}
-							}
-						}
-					}
-				}
-   			}
 		}
 	}
 	
@@ -305,7 +273,7 @@ ideas = {
 		free_trade = {
 			
 			
-			cost = 150
+			cost = 100
 			removal_cost = -1
 			
 			modifier = {
@@ -317,37 +285,6 @@ ideas = {
 			}
 			
 			cancel_if_invalid = no
-			
-			ai_will_do = {
-   				factor = 100000
-				
-				modifier = {
-					factor = 0
-					
-					NOT = {
-						AND = {
-							EAI_can_take_free_trade = yes
-							
-							OR = {
-								AND = {
-									has_war = yes
-									
-									NOT = {
-										EAI_can_upgrade_manpower_law = yes
-										
-										EAI_can_upgrade_economy_law = yes
-									}
-								}
-								AND = {
-									has_war = no
-									
-									NOT = { EAI_can_upgrade_economy_law = yes }
-								}
-							}
-						}
-					}
-				}
-   			}
 		}
 		
 		export_focus = {
@@ -364,7 +301,7 @@ ideas = {
 			}
 			
 			
-			cost = 150
+			cost = 100
 			removal_cost = -1
 			
 			modifier = {
@@ -380,32 +317,18 @@ ideas = {
 			cancel_if_invalid = no
 
 			ai_will_do = {
-   				factor = 100000
+   				factor = 1
 
+				# portugal and sweden are special tungsten snowflakes
 				modifier = {
 					factor = 0
 					
-					NOT = {
-						AND = {
-							EAI_can_take_export_focus = yes
-							
-							OR = {
-								AND = {
-									has_war = yes
-									
-									NOT = {
-										EAI_can_upgrade_manpower_law = yes
-										
-										EAI_can_upgrade_economy_law = yes
-									}
-								}
-								AND = {
-									has_war = no
-									
-									NOT = { EAI_can_upgrade_economy_law = yes }
-								}
-							}
-						}
+					is_major = no
+					has_war = no
+					is_in_faction = no
+					OR = {
+						tag = POR
+						tag = SWE
 					}
 				}
    			}
@@ -446,7 +369,7 @@ ideas = {
 				}
 			}
 		
-			cost = 150
+			cost = 100
 			removal_cost = -1
 			
 			modifier = {
@@ -460,33 +383,22 @@ ideas = {
 			cancel_if_invalid = no
 
 			ai_will_do = {
-   				factor = 100000
-				
+   				factor = 1
+
+   				modifier = {
+					factor = 0
+					
+					is_major = no
+					is_in_faction = yes
+					has_war = yes
+				}
+
+				# minors not at war should want to get the bonuses from free trade
 				modifier = {
 					factor = 0
 					
-					NOT = {
-						AND = {
-							EAI_can_take_limited_exports = yes
-							
-							OR = {
-								AND = {
-									has_war = yes
-									
-									NOT = {
-										EAI_can_upgrade_manpower_law = yes
-										
-										EAI_can_upgrade_economy_law = yes
-									}
-								}
-								AND = {
-									has_war = no
-									
-									NOT = { EAI_can_upgrade_economy_law = yes }
-								}
-							}
-						}
-					}
+					is_major = no
+					has_war = no
 				}
    			}
 		}
@@ -518,7 +430,7 @@ ideas = {
 				}
 			}
 			
-			cost = 150
+			cost = 100
 			removal_cost = -1
 			
 			
@@ -533,7 +445,23 @@ ideas = {
 			cancel_if_invalid = no
 
 			ai_will_do = {
-   				factor = 0
+   				factor = 1
+
+   				modifier = {
+					factor = 0
+					
+					is_major = no
+					is_in_faction = yes
+					has_war = yes
+				}
+
+				# minors not at war should want to get the bonuses from free trade
+				modifier = {
+					factor = 0
+					
+					is_major = no
+					has_war = no
+				}
    			}
 		}
 	}
