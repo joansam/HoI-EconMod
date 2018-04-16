@@ -42,7 +42,7 @@ ideas = {
 			
 			modifier = {
 				consumer_goods_factor = 0.35
-				political_power_factor = 0.2
+				political_power_factor = 0.3
 				production_speed_buildings_factor = -0.8
 				generate_wargoal_tension = 1.00
 				join_faction_tension = 0.20
@@ -62,7 +62,7 @@ ideas = {
 		civilian_economy = {
 			
 		
-			cost = 150
+			cost = 100
 			removal_cost = -1
 			
 			modifier = {
@@ -89,11 +89,12 @@ ideas = {
 				}	
 			}
 			
-			cost = 150
+			cost = 100
 			removal_cost = -1
 			
 			modifier = {
 				consumer_goods_factor = 0.25
+				political_power_factor = 0.1
 				production_speed_buildings_factor = -0.3
 			}
 			
@@ -127,7 +128,7 @@ ideas = {
 				}
 			}
 
-			cost = 150
+			cost = 100
 			removal_cost = -1
 			
 			modifier = {
@@ -178,7 +179,7 @@ ideas = {
 				}		
 			}
 		
-			cost = 150
+			cost = 100
 			removal_cost = -1
 			
 			modifier = {
@@ -250,7 +251,7 @@ ideas = {
 				}				
    			}
 			
-			cost = 150
+			cost = 100
 			removal_cost = -1
 			
 			modifier = {
@@ -272,7 +273,7 @@ ideas = {
 		free_trade = {
 			
 			
-			cost = 150
+			cost = 100
 			removal_cost = -1
 			
 			modifier = {
@@ -300,7 +301,7 @@ ideas = {
 			}
 			
 			
-			cost = 150
+			cost = 100
 			removal_cost = -1
 			
 			modifier = {
@@ -368,7 +369,7 @@ ideas = {
 				}
 			}
 		
-			cost = 150
+			cost = 100
 			removal_cost = -1
 			
 			modifier = {
@@ -429,7 +430,7 @@ ideas = {
 				}
 			}
 			
-			cost = 150
+			cost = 100
 			removal_cost = -1
 			
 			

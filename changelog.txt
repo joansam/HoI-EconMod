@@ -6,15 +6,26 @@
 -- Made low manpower warning less prevalent (Shows when mp left is 10% of army mp)
 
 -- Economic file:
--- Redid economy laws - now arming tends to increase build speed but decrease factories
+-- Redone economy laws - now arming tends to increase build speed but give political power and manpower penalties
+-- Also laws cost 100 to change, not 150
+-- AI more likely to go partial mobilization
+
+-- Manpower file
+-- 100 cost to change
+
+--France ideas file
+--Changed national spirit to not give -5% war support so they mobilize earlier
 
 -- Buildings file:
--- Arms factory and dockyard 20% cheaper
--- (Not 25 because 20% cheaper factories means 25% more of them)
+-- Arms factory and dockyard 10% cheaper
+-- (Not 25 because less micro this way)
 -- Max refinery level: 3 -> 5
 
 -- Tech file:
 -- 5% more slots for every level of concentrated + dispersed industry
+
+-- Static modifiers:
+-- 30% fewer factories and resources from non-core states, and fewer from occupied
 
 -- To Do
 -- Lower non-core factories? If possible
