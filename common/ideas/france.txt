@@ -22,7 +22,6 @@ ideas = {
 			}
 			modifier = {
 				conscription = -0.003
-				war_support_factor = -0.05
 			}
 		}
 
@@ -437,7 +436,7 @@ ideas = {
 			}
 			
 			ai_will_do = {
-				factor = 1
+				factor = 10000 #EAI
 			}
 		}	
 
@@ -473,7 +472,7 @@ ideas = {
 			}
 			
 			ai_will_do = {
-				factor = 1
+				factor = 0 #EAI
 			}
 		}	
 
@@ -494,7 +493,7 @@ ideas = {
 			}
 			
 			ai_will_do = {
-				factor = 1
+				factor = 10000 #EAI
 			}
 		}	
 
@@ -515,7 +514,7 @@ ideas = {
 			}
 			
 			ai_will_do = {
-				factor = 1
+				factor = 0 #EAI
 			}
 		}	
 
@@ -536,7 +535,7 @@ ideas = {
 			}
 			
 			ai_will_do = {
-				factor = 1
+				factor = 0 #EAI
 			}
 		}	
 
@@ -557,7 +556,7 @@ ideas = {
 			}
 			
 			ai_will_do = {
-				factor = 1
+				factor = 0 #EAI
 			}
 		}	
 	}
@@ -581,7 +580,7 @@ ideas = {
 			traits = { army_chief_offensive_2 }
 			
 			ai_will_do = {
-				factor = 1
+				factor = 0 #EAI
 			}
 		}
 		
@@ -600,7 +599,7 @@ ideas = {
 			traits = { army_chief_defensive_2 }
 			
 			ai_will_do = {
-				factor = 1
+				factor = 100 #EAI
 			}
 		}
 
@@ -617,7 +616,7 @@ ideas = {
 			traits = { army_chief_offensive_1 }
 			
 			ai_will_do = {
-				factor = 1
+				factor = 0 #EAI
 			}
 		}
 
@@ -634,7 +633,7 @@ ideas = {
 			traits = { army_chief_defensive_1 }
 			
 			ai_will_do = {
-				factor = 1
+				factor = 0 #EAI
 			}
 		}		
 		
@@ -650,7 +649,7 @@ ideas = {
 			traits = { army_chief_maneuver_1 }
 			
 			ai_will_do = {
-				factor = 1
+				factor = 0 #EAI
 			}
 		}	
 	}
@@ -684,7 +683,7 @@ ideas = {
 			traits = { navy_chief_naval_aviation_1 }
 			
 			ai_will_do = {
-				factor = 1
+				factor = 0 #EAI
 			}
 		}
 		
@@ -700,7 +699,7 @@ ideas = {
 			traits = { navy_chief_commerce_raiding_2 }
 			
 			ai_will_do = {
-				factor = 1
+				factor = 0 #EAI
 			}
 		}	
 	}
@@ -734,7 +733,7 @@ ideas = {
 			traits = { air_chief_all_weather_1 }
 			
 			ai_will_do = {
-				factor = 1
+				factor = 0 #EAI
 			}
 		}
 		
@@ -750,7 +749,7 @@ ideas = {
 			traits = { air_chief_reform_2 }
 			
 			ai_will_do = {
-				factor = 1
+				factor = 0 #EAI
 			}
 		}
 	}
@@ -769,7 +768,7 @@ ideas = {
 			traits = { army_cavalry_2 }
 			
 			ai_will_do = {
-				factor = 1
+				factor = 1 #EAI
 			}
 		}
 		
@@ -801,7 +800,7 @@ ideas = {
 			traits = { army_commando_2 }
 			
 			ai_will_do = {
-				factor = 1
+				factor = 10 #EAI
 			}
 		}	
 		
@@ -817,7 +816,7 @@ ideas = {
 			traits = { air_air_combat_training_2 }
 			
 			ai_will_do = {
-				factor = 1
+				factor = 0 #EAI
 			}
 		}
 		
@@ -865,7 +864,7 @@ ideas = {
 			traits = { navy_capital_ship_1 }
 			
 			ai_will_do = {
-				factor = 1
+				factor = 0 #EAI
 			}
 		}
 		
@@ -881,7 +880,7 @@ ideas = {
 			traits = { navy_fleet_logistics_2 }
 			
 			ai_will_do = {
-				factor = 1
+				factor = 0 #EAI
 			}
 		}
 		
@@ -897,7 +896,7 @@ ideas = {
 			traits = { navy_screen_2 }
 			
 			ai_will_do = {
-				factor = 1
+				factor = 0
 			}
 		}
 	}
@@ -1097,13 +1096,7 @@ ideas = {
 			traits = { grand_battle_plan_expert }
 
 			ai_will_do = {
-				factor = 1
-				modifier = {
-					factor = 0
-
-					GER = { is_ai = yes }
-					date < 1939.1.1
-				}
+				factor = 0 #EAI
 			}
 
 		}
@@ -1117,18 +1110,12 @@ ideas = {
 			research_bonus = {
 				land_doctrine = 0.07
 			}
-
-			ai_will_do = {
-				factor = 1
-				modifier = {
-					factor = 0
-
-					GER = { is_ai = yes }
-					date < 1939.1.1
-				}
-			}
 			
 			traits = { military_theorist }
+			
+			ai_will_do = {
+				factor = 50000 #EAI
+			}
 		}
 		
 		louis_kahn = {
@@ -1145,6 +1132,10 @@ ideas = {
 			}
 			
 			traits = { grand_fleet_proponent }
+			
+			ai_will_do = {
+				factor = 0 #EAI
+			}
 		}
 		
 		jean_decoux = {
@@ -1160,6 +1151,10 @@ ideas = {
 			}
 			
 			traits = { naval_theorist }
+			
+			ai_will_do = {
+				factor = 0 #EAI
+			}
 		}
 		
 		victor_denain = {
@@ -1176,6 +1171,10 @@ ideas = {
 			}
 			
 			traits = { assault_avaition }
+			
+			ai_will_do = {
+				factor = 0 #EAI
+			}
 		}
 		
 		jean_marie_bergeret = {
@@ -1189,6 +1188,10 @@ ideas = {
 			}
 			
 			traits = { air_warfare_theorist }
+			
+			ai_will_do = {
+				factor = 0 #EAI
+			}
 		}
 		
 		frederic_irene_joliot_curie = {
@@ -1204,6 +1207,10 @@ ideas = {
 			}
 			
 			traits = { nuclear_scientist }
+			
+			ai_will_do = {
+				factor = 0 #EAI
+			}
 		}
 	}	
 }

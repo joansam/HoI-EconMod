@@ -33,6 +33,8 @@ weather_snow = { # on Region
 	air_accidents = 0.1
 	local_org_regain = -0.05
 	air_mission_efficiency = -0.1
+	
+	army_speed_factor = -0.25 #EAI
 }
 weather_blizzard = { # on Region 
 	air_detection = -0.3
@@ -44,6 +46,8 @@ weather_blizzard = { # on Region
 	air_bombing_targetting = -0.7
 	local_org_regain = -0.3
 	air_mission_efficiency = -0.3
+	
+	army_speed_factor = -0.5 #EAI
 }
 weather_sandstorm = { # on Region 
 	air_detection = -0.9
@@ -54,7 +58,7 @@ weather_sandstorm = { # on Region
 }
 weather_mud = { # on Province
 	attrition = 0.7
-	army_speed_factor = -0.5
+	army_speed_factor = -0.75 #EAI -0.5
 	army_attack_factor = -0.4
 }
 weather_extreme_cold = { # on Province
@@ -79,11 +83,11 @@ weather_extreme_hot = { # on Province
 	army_attack_factor = -0.1
 }
 weather_ground_snow_medium = { # on Province
-	army_speed_factor = -0.1
+	army_speed_factor = -0.25  #EAI -0.1
 	army_attack_factor = -0.1
 }
 weather_ground_snow_high = { # on Province
-	army_speed_factor = -0.25
+	army_speed_factor = -0.5 #EAI -0.25
 	local_org_regain = -0.05
 	army_attack_factor = -0.3
 }
@@ -96,29 +100,29 @@ night = { # On province. Multiplied by amount of darkness.
 
 occupation_policy_1 = { # Gentlest
 	resistance_tick = -0.6
-	local_resources = -0.3
+	local_resources = -0.7
 	local_manpower = -0.7
-	local_factories = -0.6
+	local_factories = -0.7 #EAI local_factories = -0.6
 }
 occupation_policy_2 = { # Gentle
 	resistance_tick = -0.4
-	local_resources = -0.2
+	local_resources = -0.6
 	local_manpower = -0.8
-	local_factories = -0.4
+	local_factories = -0.6 #EAI local_factories = -0.4
 	occupation_cost = 0.01
 }
 occupation_policy_3 = { # Harsh
 	resistance_tick = -0.2
-	local_resources = -0.1
+	local_resources = -0.5
 	local_manpower = -0.9
-	local_factories = -0.2
+	local_factories = -0.5 #EAI local_factories = -0.2
 	occupation_cost = 0.02
 }
 occupation_policy_4 = { # Harshest
 	#resistance_tick = 0.0
-	#local_resources = 0.0
+	local_resources = -0.4
 	local_manpower = -1.0
-	#local_factories = 0.0
+	local_factories = -0.4 #EAI #local_factories = 0.0
 	occupation_cost = 0.04
 }
 
@@ -132,12 +136,14 @@ resistance_effect = {
 
 # On States
 non_core = {
-	local_building_slots_factor = -0.5
+	local_resources = -0.3
+	local_factories = -0.3
 }
 
 
 
 lacking_consumer_goods = {
+
 }
 
 gain_focus = {
@@ -314,7 +320,7 @@ diff_strong_ai_generic = {
 	# fightyness
 	dig_in_speed_factor = 0.25
 	planning_speed = 0.25
-	supply_consumption_factor = -0.25
+	supply_consumption_factor = -0.05
 	army_morale_factor = 0.15
 	land_reinforce_rate = 0.02
 
@@ -329,7 +335,6 @@ diff_strong_ai_generic = {
 	production_factory_efficiency_gain_factor = 0.25
 	industrial_capacity_dockyard = 0.2
 	political_power_factor = 0.25
-	research_time_factor = -0.1
 	production_lack_of_resource_penalty_factor = -0.3
 
 	# xp gain
