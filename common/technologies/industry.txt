@@ -27,8 +27,8 @@ technologies = {
 			position = { x = 0 y = 0 }
 		}
 		
-		ai_will_do = {
-			factor = 50
+		ai_will_do = { #EAI
+			factor = 300
 		}
 		
 		categories = {
@@ -59,13 +59,11 @@ technologies = {
 			position = { x = 0 y = 4 }
 		}
 		
-		ai_will_do = {
-			factor = 40
-						
-			modifier = {
-				factor = 10
-				date > "1937.1.1"
-			}
+		ai_will_do = { #EAI
+			factor = 300
+
+			#PRIORITISE MAIN INDUSTRY TECHS
+			modifier = { factor = 0 EAI_prioritise_main_industry = yes }
 		}
 		
 		categories = {
@@ -90,13 +88,14 @@ technologies = {
 			position = { x = 0 y = 6 }
 		}
 		
-		ai_will_do = {
-			factor = 30
-						
-			modifier = {
-				factor = 10
-				date > "1939.1.1"
-			}
+		ai_will_do = { #EAI
+			factor = 300
+
+			#DATE
+			modifier = { factor = 0 date < 1938.8.1 }
+
+			#PRIORITISE MAIN INDUSTRY TECHS
+			modifier = { factor = 0 EAI_prioritise_main_industry = yes }
 		}
 		
 		categories = {
@@ -132,13 +131,14 @@ technologies = {
 			position = { x = 0 y = 8 }
 		}
 		
-		ai_will_do = {
-			factor = 20
-			
-			modifier = {
-				factor = 10
-				date > "1941.1.1"
-			}			
+		ai_will_do = { #EAI
+			factor = 300
+
+			#DATE
+			modifier = { factor = 0 date < 1940.8.1 }
+
+			#PRIORITISE MAIN INDUSTRY TECHS
+			modifier = { factor = 0 EAI_prioritise_main_industry = yes }
 		}
 		
 		categories = {
@@ -163,13 +163,8 @@ technologies = {
 			position = { x = -1 y = 10 }
 		}
 		
-		ai_will_do = {
-			factor = 20
-						
-			modifier = {
-				factor = 10
-				date > "1943.1.1"
-			}
+		ai_will_do = { #EAI
+			factor = 0
 		}
 		
 		categories = {
@@ -194,14 +189,14 @@ technologies = {
 			position = { x = 1 y = 10 }
 		}
 		
-		ai_will_do = {
-			factor = 20
-			
-			modifier = {
-				factor = 10
-				date > "1943.1.1"
-			}
-			
+		ai_will_do = { #EAI
+			factor = 300
+
+			#DATE
+			modifier = { factor = 0 date < 1942.8.1 }
+
+			#PRIORITISE MAIN INDUSTRY TECHS
+			modifier = { factor = 0 EAI_prioritise_main_industry = yes }
 		}
 		
 		categories = {
@@ -231,18 +226,8 @@ technologies = {
 			position = { x = 2 y = 4 }
 		}
 
-		ai_will_do = {
-			factor = 1
-
-			modifier = {
-				factor = 2
-				date > "1937.1.1"
-			}
-
-			modifier = {
-				factor = 0
-				NOT = { has_government = fascism }
-			}
+		ai_will_do = { #EAI
+			factor = 0
 		}
 		
 		categories = {
@@ -262,18 +247,8 @@ technologies = {
 			position = { x = 2 y = 6 }
 		}
 		
-		ai_will_do = {
-			factor = 1
-
-			modifier = {
-				factor = 2
-				date > "1937.1.1"
-			}
-
-			modifier = {
-				factor = 0
-				NOT = { has_government = fascism }
-			}
+		ai_will_do = { #EAI
+			factor = 0
 		}
 		
 		categories = {
@@ -286,7 +261,7 @@ technologies = {
 
 		industrial_capacity_factory = 0.15
 		industrial_capacity_dockyard = 0.1
-		global_building_slots_factor = 0.25
+		global_building_slots_factor = 0.250
 		
 		path = {
 			leads_to_tech = concentrated_industry2 
@@ -304,59 +279,25 @@ technologies = {
 			position = { x = 4 y = 2 }
 		}
 		
-		ai_will_do = {
-			factor = 25
+		ai_will_do = { #EAI
+			factor = 500
 
-			modifier = {
-				factor = 2
-				NOT = { tag = GER }
-			}
+			#RESTRICTIONS
+			modifier = { factor = 0 NOT = { EAI_concentrated_industry_tech_focus = yes } }
 			
-			modifier = {
-				factor = 2
-				tag = USA
-			}
-			
-			modifier = {
-				factor = 2
-				tag = ENG
-			}
-			
-			modifier = {
-				factor = 2
-				tag = JAP
-			}
-
-			modifier = {
-				factor = 0
-				has_tech = dispersed_industry
-			}
-			
-			modifier = {
-				factor = 0
-				is_researching_technology = dispersed_industry
-			}
-						
-			modifier = {
-				factor = 5
-				date > "1937.1.1"
-			}
+			modifier = { factor = 0 OR = { has_tech = dispersed_industry is_researching_technology = dispersed_industry } }
 		}
 		
 		categories = {
 			industry
 		}
-		
-		ai_research_weights = {
-			offensive = -1.0
-		}
 	}
 	
 	concentrated_industry2 = {
-
+	
 		industrial_capacity_factory = 0.15
 		industrial_capacity_dockyard = 0.1
-		global_building_slots_factor = 0.25
+		global_building_slots_factor = 0.250
 		
 		path = {
 			leads_to_tech = concentrated_industry3 
@@ -371,22 +312,15 @@ technologies = {
 			position = { x = 4 y = 4 }
 		}
 		
-		ai_will_do = {
-			factor = 20
-						
-			modifier = {
-				factor = 10
-				date > "1937.1.1"
-			}
+		ai_will_do = { #EAI
+			factor = 500
 			
+			#RESTRICTIONS
+			modifier = { factor = 0 NOT = { EAI_concentrated_industry_tech_focus = yes } }
 		}
 		
 		categories = {
 			industry
-		}
-		
-		ai_research_weights = {
-			offensive = -1.0
 		}
 	}
 	
@@ -394,7 +328,7 @@ technologies = {
 
 		industrial_capacity_factory = 0.15
 		industrial_capacity_dockyard = 0.1
-		global_building_slots_factor = 0.25
+		global_building_slots_factor = 0.250
 		
 		path = {
 			leads_to_tech = concentrated_industry4 
@@ -409,29 +343,26 @@ technologies = {
 			position = { x = 4 y = 6 }
 		}
 		
-		ai_will_do = {
-			factor = 20
+		ai_will_do = { #EAI
+			factor = 500
+
+			#DATE
+			modifier = { factor = 0 date < 1938.4.1 }
 			
-			modifier = {
-				factor = 10
-				date > "1939.1.1"
-			}			
+			#RESTRICTIONS
+			modifier = { factor = 0 NOT = { EAI_concentrated_industry_tech_focus = yes } }
 		}
 		
 		categories = {
 			industry
 		}
-		
-		ai_research_weights = {
-			offensive = -1.0
-		}
 	}
 	
 	concentrated_industry4 = {
-
+		
 		industrial_capacity_factory = 0.15
 		industrial_capacity_dockyard = 0.1
-		global_building_slots_factor = 0.25
+		global_building_slots_factor = 0.250
 		
 		path = {
 			leads_to_tech = concentrated_industry5
@@ -446,29 +377,26 @@ technologies = {
 			position = { x = 4 y = 8 }
 		}
 		
-		ai_will_do = {
-			factor = 20
-						
-			modifier = {
-				factor = 10
-				date > "1941.1.1"
-			}
+		ai_will_do = { #EAI
+			factor = 500
+
+			#DATE
+			modifier = { factor = 0 date < 1940.4.1 }
+			
+			#RESTRICTIONS
+			modifier = { factor = 0 NOT = { EAI_concentrated_industry_tech_focus = yes } }
 		}
 		
 		categories = {
 			industry
 		}
-		
-		ai_research_weights = {
-			offensive = -1.0
-		}
 	}
 	
 	concentrated_industry5 = {
-
+		
 		industrial_capacity_factory = 0.15
 		industrial_capacity_dockyard = 0.1
-		global_building_slots_factor = 0.25
+		global_building_slots_factor = 0.250
 		
 		research_cost = 2
 		start_year = 1943
@@ -478,31 +406,23 @@ technologies = {
 			position = { x = 4 y = 10 }
 		}
 		
-		ai_will_do = {
-			factor = 4
+		ai_will_do = { #EAI
+			factor = 500
+
+			#DATE
+			modifier = { factor = 0 date < 1942.4.1 }
 			
-			modifier = {
-				factor = 5
-				date > "1942.1.9"
-			}
-			
-			modifier = {
-				factor = 20
-				date > "1943.1.1"
-			}			
+			#RESTRICTIONS
+			modifier = { factor = 0 NOT = { EAI_concentrated_industry_tech_focus = yes } }
 		}
 		
 		categories = {
 			industry
 		}
-		
-		ai_research_weights = {
-			offensive = -1.0
-		}
 	}
 	
 	dispersed_industry = {
-
+		
 		industrial_capacity_factory = 0.1
 		industrial_capacity_dockyard = 0.1
 		line_change_production_efficiency_factor = 0.1
@@ -527,56 +447,22 @@ technologies = {
 			position = { x = 6 y = 2 }
 		}
 		
-		ai_will_do = {
-			factor = 25
+		ai_will_do = { #EAI
+			factor = 500
 
-			modifier = {
-				factor = 2
-				tag = GER
-			}
+			#RESTRICTIONS
+			modifier = { factor = 0 NOT = { EAI_dispersed_industry_tech_focus = yes } }
 			
-			modifier = {
-				factor = 0.25
-				tag = USA
-			}
-			
-			modifier = {
-				factor = 0.25
-				tag = ENG
-			}
-			
-			modifier = {
-				factor = 0.25
-				tag = JAP
-			}
-
-			modifier = {
-				factor = 0
-				has_tech = concentrated_industry
-			}
-			
-			modifier = {
-				factor = 0
-				is_researching_technology = concentrated_industry
-			}
-
-			modifier = {
-				factor = 5
-				date > "1937.1.1"
-			}
+			modifier = { factor = 0 OR = { has_tech = concentrated_industry is_researching_technology = concentrated_industry } }
 		}
 		
 		categories = {
 			industry
 		}
-		
-		ai_research_weights = {
-			defensive = -1.0
-		}
 	}
 	
 	dispersed_industry2 = {
-
+		
 		industrial_capacity_factory = 0.1
 		industrial_capacity_dockyard = 0.1
 		line_change_production_efficiency_factor = 0.1
@@ -597,26 +483,20 @@ technologies = {
 			position = { x = 6 y = 4 }
 		}
 		
-		ai_will_do = {
-			factor = 20
-						
-			modifier = {
-				factor = 10
-				date > "1937.1.1"
-			}
+		ai_will_do = { #EAI
+			factor = 500
+			
+			#RESTRICTIONS
+			modifier = { factor = 0 NOT = { EAI_dispersed_industry_tech_focus = yes } }
 		}
 		
 		categories = {
 			industry
 		}
-		
-		ai_research_weights = {
-			defensive = -1.0
-		}
 	}
 	
 	dispersed_industry3 = {
-
+		
 		industrial_capacity_factory = 0.1
 		industrial_capacity_dockyard = 0.1
 		line_change_production_efficiency_factor = 0.1
@@ -637,26 +517,23 @@ technologies = {
 			position = { x = 6 y = 6 }
 		}
 		
-		ai_will_do = {
-			factor = 20
-						
-			modifier = {
-				factor = 10
-				date > "1939.1.1"
-			}			
+		ai_will_do = { #EAI
+			factor = 500
+
+			#DATE
+			modifier = { factor = 0 date < 1938.4.1 }
+			
+			#RESTRICTIONS
+			modifier = { factor = 0 NOT = { EAI_dispersed_industry_tech_focus = yes } }
 		}
 		
 		categories = {
 			industry
 		}
-		
-		ai_research_weights = {
-			defensive = -1.0
-		}
 	}
 	
 	dispersed_industry4 = {
-
+		
 		industrial_capacity_factory = 0.1
 		industrial_capacity_dockyard = 0.1
 		line_change_production_efficiency_factor = 0.1
@@ -677,21 +554,18 @@ technologies = {
 			position = { x = 6 y = 8 }
 		}
 		
-		ai_will_do = {
-			factor = 20
-						
-			modifier = {
-				factor = 10
-				date > "1941.1.1"
-			}
+		ai_will_do = { #EAI
+			factor = 500
+
+			#DATE
+			modifier = { factor = 0 date < 1940.4.1 }
+			
+			#RESTRICTIONS
+			modifier = { factor = 0 NOT = { EAI_dispersed_industry_tech_focus = yes } }
 		}
 		
 		categories = {
 			industry
-		}
-		
-		ai_research_weights = {
-			defensive = -1.0
 		}
 	}
 	
@@ -713,22 +587,18 @@ technologies = {
 			position = { x = 6 y = 10 }
 		}
 		
-		ai_will_do = {
-			factor = 20
+		ai_will_do = { #EAI
+			factor = 500
+
+			#DATE
+			modifier = { factor = 0 date < 1942.4.1 }
 			
-			
-			modifier = {
-				factor = 10
-				date > "1943.1.1"
-			}
+			#RESTRICTIONS
+			modifier = { factor = 0 NOT = { EAI_dispersed_industry_tech_focus = yes } }
 		}
 		
 		categories = {
 			industry
-		}
-		
-		ai_research_weights = {
-			defensive = -1.0
 		}
 	}
 	
@@ -736,7 +606,7 @@ technologies = {
 
 		enable_building = {
 			building = synthetic_refinery
-			level = 5
+			level = 3
 		}
 				
 		path = {
@@ -760,24 +630,23 @@ technologies = {
 			synth_resources
 		}
 		
-		ai_will_do = {
-			factor = 1
-			modifier = {
-				factor = 0.5
-				oil > 10
+		ai_will_do = { #EAI
+			factor = 50
+			
+			#WEIGHT
+			modifier = { 
+				factor = 10
+				OR = { check_variable = { resource_consumed@oil > 4 } check_variable = { resource_consumed@rubber > 4 } }
+				OR = { 
+					check_variable = { resource@oil < 8 } check_variable = { resource_imported@oil > 8 } 
+					check_variable = { resource@rubber < 8 } check_variable = { resource_imported@rubber > 8 } 
+				} 
 			}
-			modifier = {
-				factor = 0.5
-				oil > 20
-			}	
-			modifier = {
-				factor = 0.5
-				oil > 30
-			}			
-		}
-		
-		ai_research_weights = {
-			oil = -2.0
+
+			#RESTRICTIONS
+			modifier = { factor = 0 date < 1939.1.1 NOT = { EAI_synth_tech_focus = yes } }
+			
+			modifier = { factor = 0 num_of_military_factories < 20 }
 		}
 	}
 	
@@ -810,24 +679,26 @@ technologies = {
 			synth_resources
 		}
 		
-		ai_will_do = {
-			factor = 0.5
-			modifier = {
-				factor = 0.5
-				oil > 10
+		ai_will_do = { #EAI
+			factor = 50
+			
+			#DATE
+			modifier = { factor = 0 date < 1937.1.1 }
+			
+			#WEIGHT
+			modifier = { 
+				factor = 10
+				check_variable = { resource_consumed@oil > 4 }
+				OR = { 
+					check_variable = { resource@oil < 8 } check_variable = { resource_imported@oil > 8 } 
+				} 
 			}
-			modifier = {
-				factor = 0.5
-				oil > 20
-			}	
-			modifier = {
-				factor = 0.5
-				oil > 30
-			}			
-		}
-		
-		ai_research_weights = {
-			oil = -2.0
+			
+			#RESTRICTIONS
+			modifier = { factor = 0 synthetic_refinery < 5 }
+			
+			#PRIORITISE MAIN INDUSTRY TECHS
+			modifier = { factor = 0 EAI_prioritise_main_industry = yes }
 		}
 		
 		show_effect_as_desc = yes
@@ -861,24 +732,26 @@ technologies = {
 			synth_resources
 		}
 		
-		ai_will_do = {
-			factor = 0.5
-			modifier = {
-				factor = 0.5
-				oil > 10
+		ai_will_do = { #EAI
+			factor = 50		
+
+			#DATE
+			modifier = { factor = 0 date < 1939.1.1 }	
+			
+			#WEIGHT
+			modifier = { 
+				factor = 10
+				check_variable = { resource_consumed@oil > 4 }
+				OR = { 
+					check_variable = { resource@oil < 8 } check_variable = { resource_imported@oil > 8 } 
+				} 
 			}
-			modifier = {
-				factor = 0.5
-				oil > 20
-			}	
-			modifier = {
-				factor = 0.5
-				oil > 30
-			}			
-		}
-		
-		ai_research_weights = {
-			oil = -2.0
+
+			#RESTRICTIONS
+			modifier = { factor = 0 synthetic_refinery < 5 }
+			
+			#PRIORITISE MAIN INDUSTRY TECHS
+			modifier = { factor = 0 EAI_prioritise_main_industry = yes }
 		}
 		
 		show_effect_as_desc = yes
@@ -912,24 +785,26 @@ technologies = {
 			synth_resources
 		}
 		
-		ai_will_do = {
-			factor = 0.5
-			modifier = {
-				factor = 0.5
-				rubber > 10
+		ai_will_do = { #EAI
+			factor = 50		
+			
+			#DATE
+			modifier = { factor = 0 date < 1941.1.1 }
+			
+			#WEIGHT
+			modifier = { 
+				factor = 10
+				check_variable = { resource_consumed@oil > 4 }
+				OR = { 
+					check_variable = { resource@oil < 8 } check_variable = { resource_imported@oil > 8 } 
+				} 
 			}
-			modifier = {
-				factor = 0.5
-				rubber > 20
-			}	
-			modifier = {
-				factor = 0.5
-				rubber > 30
-			}			
-		}
-		
-		ai_research_weights = {
-			rubber = -2.0
+			
+			#RESTRICTIONS
+			modifier = { factor = 0 synthetic_refinery < 5 }
+			
+			#PRIORITISE MAIN INDUSTRY TECHS
+			modifier = { factor = 0 EAI_prioritise_main_industry = yes }
 		}
 		
 		show_effect_as_desc = yes
@@ -958,24 +833,26 @@ technologies = {
 			synth_resources
 		}
 		
-		ai_will_do = {
-			factor = 0.5
-			modifier = {
-				factor = 0.5
-				oil > 10
+		ai_will_do = { #EAI
+			factor = 50	
+			
+			#DATE
+			modifier = { factor = 0 date < 1943.1.1 }
+			
+			#WEIGHT
+			modifier = { 
+				factor = 10
+				check_variable = { resource_consumed@oil > 4 }
+				OR = { 
+					check_variable = { resource@oil < 8 } check_variable = { resource_imported@oil > 8 } 
+				} 
 			}
-			modifier = {
-				factor = 0.5
-				oil > 20
-			}	
-			modifier = {
-				factor = 0.5
-				oil > 30
-			}			
-		}
-		
-		ai_research_weights = {
-			oil = -2.0
+			
+			#RESTRICTIONS
+			modifier = { factor = 0 synthetic_refinery < 5 }
+			
+			#PRIORITISE MAIN INDUSTRY TECHS
+			modifier = { factor = 0 EAI_prioritise_main_industry = yes }
 		}
 		
 		show_effect_as_desc = yes
@@ -1010,24 +887,26 @@ technologies = {
 			synth_resources
 		}
 		
-		ai_will_do = {
-			factor = 0.5
-			modifier = {
-				factor = 0.5
-				rubber > 10
+		ai_will_do = { #EAI
+			factor = 50		
+
+			#DATE
+			modifier = { factor = 0 date < 1937.1.1 }
+			
+			#WEIGHT
+			modifier = { 
+				factor = 10
+				check_variable = { resource_consumed@rubber > 4 }
+				OR = { 
+					check_variable = { resource@rubber < 8 } check_variable = { resource_imported@rubber > 8 } 
+				} 
 			}
-			modifier = {
-				factor = 0.5
-				rubber > 20
-			}	
-			modifier = {
-				factor = 0.5
-				rubber > 30
-			}			
-		}
-		
-		ai_research_weights = {
-			rubber = -2.0
+			
+			#RESTRICTIONS
+			modifier = { factor = 0 synthetic_refinery < 5 }
+			
+			#PRIORITISE MAIN INDUSTRY TECHS
+			modifier = { factor = 0 EAI_prioritise_main_industry = yes }
 		}
 		
 		show_effect_as_desc = yes
@@ -1061,24 +940,26 @@ technologies = {
 			synth_resources
 		}
 		
-		ai_will_do = {
-			factor = 0.5
-			modifier = {
-				factor = 0.5
-				rubber > 10
+		ai_will_do = { #EAI
+			factor = 50		
+			
+			#DATE
+			modifier = { factor = 0 date < 1939.1.1 }
+			
+			#WEIGHT
+			modifier = { 
+				factor = 10
+				check_variable = { resource_consumed@rubber > 4 }
+				OR = { 
+					check_variable = { resource@rubber < 8 } check_variable = { resource_imported@rubber > 8 } 
+				} 
 			}
-			modifier = {
-				factor = 0.5
-				rubber > 20
-			}	
-			modifier = {
-				factor = 0.5
-				rubber > 30
-			}			
-		}
-		
-		ai_research_weights = {
-			rubber = -2.0
+			
+			#RESTRICTIONS
+			modifier = { factor = 0 synthetic_refinery < 5 }
+			
+			#PRIORITISE MAIN INDUSTRY TECHS
+			modifier = { factor = 0 EAI_prioritise_main_industry = yes }
 		}
 		
 		show_effect_as_desc = yes
@@ -1112,24 +993,26 @@ technologies = {
 			synth_resources
 		}
 		
-		ai_will_do = {
-			factor = 0.5
-			modifier = {
-				factor = 0.5
-				rubber > 10
+		ai_will_do = { #EAI
+			factor = 50
+			
+			#DATE
+			modifier = { factor = 0 date < 1941.1.1 }
+			
+			#WEIGHT
+			modifier = { 
+				factor = 10
+				check_variable = { resource_consumed@rubber > 4 }
+				OR = { 
+					check_variable = { resource@rubber < 8 } check_variable = { resource_imported@rubber > 8 } 
+				} 
 			}
-			modifier = {
-				factor = 0.5
-				rubber > 20
-			}	
-			modifier = {
-				factor = 0.5
-				rubber > 30
-			}			
-		}
-		
-		ai_research_weights = {
-			rubber = -2.0
+			
+			#RESTRICTIONS
+			modifier = { factor = 0 synthetic_refinery < 5 }
+			
+			#PRIORITISE MAIN INDUSTRY TECHS
+			modifier = { factor = 0 EAI_prioritise_main_industry = yes }
 		}
 		
 		show_effect_as_desc = yes
@@ -1158,24 +1041,26 @@ technologies = {
 			synth_resources
 		}
 		
-		ai_will_do = {
-			factor = 0.5
-			modifier = {
-				factor = 0.5
-				rubber > 10
+		ai_will_do = { #EAI
+			factor = 50
+			
+			#DATE
+			modifier = { factor = 0 date < 1943.1.1 }
+			
+			#WEIGHT
+			modifier = { 
+				factor = 10
+				check_variable = { resource_consumed@rubber > 4 }
+				OR = { 
+					check_variable = { resource@rubber < 8 } check_variable = { resource_imported@rubber > 8 } 
+				} 
 			}
-			modifier = {
-				factor = 0.5
-				rubber > 20
-			}	
-			modifier = {
-				factor = 0.5
-				rubber > 30
-			}			
-		}
-		
-		ai_research_weights = {
-			rubber = -2.0
+			
+			#RESTRICTIONS
+			modifier = { factor = 0 synthetic_refinery < 5 }
+			
+			#PRIORITISE MAIN INDUSTRY TECHS
+			modifier = { factor = 0 EAI_prioritise_main_industry = yes }
 		}
 		
 		show_effect_as_desc = yes
@@ -1208,13 +1093,15 @@ technologies = {
 			position = { x = 0 y = 0 }
 		}
 		
-		ai_will_do = {
-			factor = 50
+		ai_will_do = { #EAI
+			factor = 300
 			
-			modifier = {
-				factor = 5
-				date > "1937.1.1"
-			}
+			#WEIGHT
+			modifier = { factor = 1.5 num_of_civilian_factories > 25 }
+			modifier = { factor = 1.5 has_war = no }
+			
+			#PRIORITISE MAIN INDUSTRY TECHS
+			modifier = { factor = 0 has_war = yes EAI_prioritise_main_industry = yes NOT = { EAI_resource_extraction_tech_focus = yes } }
 		}
 	}
 
@@ -1239,32 +1126,26 @@ technologies = {
 			position = { x = 2 y = 0 }
 		}
 		
-		ai_will_do = {
-			factor = 1
+		ai_will_do = { #EAI
+			factor = 200
 			
-			modifier = {
-				factor = 5.0
-				OR = {
-					oil > 0
-					aluminium > 0
-					rubber > 0
-					tungsten > 0
-					steel > 0
-					chromium > 0
-				}
+			#WEIGHT
+			modifier = { #minors with tons of resources research this so they can trade more
+				factor = 2
+				EAI_resource_extraction_tech_focus = yes
+			}
+			modifier = { #these countries don't need resources that badly
+				factor = 0
+				oil < 50
+				rubber < 50
+				steel < 50
+				aluminium < 50
+				tungsten < 50
+				chromium < 50
 			}
 			
-			modifier = {
-				factor = 1.5
-				OR = {
-					oil > 8
-					aluminium > 8
-					rubber > 8
-					tungsten > 8
-					steel > 8
-					chromium > 8
-				}
-			}
+			#PRIORITISE MAIN INDUSTRY TECHS
+			modifier = { factor = 0 EAI_prioritise_main_industry = yes NOT = { EAI_resource_extraction_tech_focus = yes } }
 		}
 	}
 	
@@ -1295,13 +1176,18 @@ technologies = {
 			position = { x = 0 y = 2 }
 		}
 		
-		ai_will_do = {
-			factor = 4
+		ai_will_do = { #EAI
+			factor = 300
+
+			#DATE
+			modifier = { factor = 0 date < 1936.8.1 }
 			
-			modifier = {
-				factor = 10
-				date > "1937.1.1"
-			}			
+			#WEIGHT
+			modifier = { factor = 1.5 num_of_civilian_factories > 25 }
+			modifier = { factor = 1.5 has_war = no }
+			
+			#PRIORITISE MAIN INDUSTRY TECHS
+			modifier = { factor = 0 has_war = yes EAI_prioritise_main_industry = yes NOT = { EAI_resource_extraction_tech_focus = yes } }
 		}
 	}
 
@@ -1327,32 +1213,29 @@ technologies = {
 			position = { x = 2 y = 2 }
 		}
 		
-		ai_will_do = {
-			factor = 1
+		ai_will_do = { #EAI
+			factor = 200
 			
-			modifier = {
-				factor = 5.0
-				OR = {
-					oil > 0
-					aluminium > 0
-					rubber > 0
-					tungsten > 0
-					steel > 0
-					chromium > 0
-				}
+			#WEIGHT
+			modifier = { #minors with tons of resources research this so they can trade more
+				factor = 2
+				EAI_resource_extraction_tech_focus = yes
 			}
-			
-			modifier = {
-				factor = 1.5
-				OR = {
-					oil > 8
-					aluminium > 8
-					rubber > 8
-					tungsten > 8
-					steel > 8
-					chromium > 8
-				}
+			modifier = { #these countries don't need resources that badly
+				factor = 0
+				oil < 50
+				rubber < 50
+				steel < 50
+				aluminium < 50
+				tungsten < 50
+				chromium < 50
 			}
+
+			#RESTRICTIONS
+			modifier = { factor = 0 NOT = { has_tech = excavation1 } }
+
+			#PRIORITISE MAIN INDUSTRY TECHS
+			modifier = { factor = 0 EAI_prioritise_main_industry = yes NOT = { EAI_resource_extraction_tech_focus = yes } }
 		}
 	}	
 	
@@ -1384,23 +1267,18 @@ technologies = {
 			position = { x = 0 y = 4 }
 		}
 		
-		ai_will_do = {
-			factor = 10
+		ai_will_do = { #EAI
+			factor = 300
+
+			#DATE
+			modifier = { factor = 0 date < 1938.8.1 }
 			
-			modifier = {
-				factor = 1.5
-				has_war = yes
-			}
+			#WEIGHT
+			modifier = { factor = 1.5 num_of_civilian_factories > 25 }
+			modifier = { factor = 1.5 has_war = no }
 			
-			modifier = {
-				factor = 0.5
-				NOT = { has_war = yes }
-			}
-			
-			modifier = {
-				factor = 3
-				date > "1940.1.1"
-			}
+			#PRIORITISE MAIN INDUSTRY TECHS
+			modifier = { factor = 0 has_war = yes EAI_prioritise_main_industry = yes NOT = { EAI_resource_extraction_tech_focus = yes } }
 		}
 	}
 
@@ -1427,32 +1305,32 @@ technologies = {
 			position = { x = 2 y = 4 }
 		}
 		
-		ai_will_do = {
-			factor = 1
+		ai_will_do = { #EAI
+			factor = 200
+
+			#DATE
+			modifier = { factor = 0 date < 1939.1.1 }
 			
-			modifier = {
-				factor = 5.0
-				OR = {
-					oil > 0
-					aluminium > 0
-					rubber > 0
-					tungsten > 0
-					steel > 0
-					chromium > 0
-				}
+			#WEIGHT
+			modifier = { #minors with tons of resources research this so they can trade more
+				factor = 2
+				EAI_resource_extraction_tech_focus = yes
 			}
-			
-			modifier = {
-				factor = 1.5
-				OR = {
-					oil > 8
-					aluminium > 8
-					rubber > 8
-					tungsten > 8
-					steel > 8
-					chromium > 8
-				}
+			modifier = { #these countries don't need resources that badly
+				factor = 0
+				oil < 50
+				rubber < 50
+				steel < 50
+				aluminium < 50
+				tungsten < 50
+				chromium < 50
 			}
+
+			#RESTRICTIONS
+			modifier = { factor = 0 NOT = { has_tech = excavation2 } }
+
+			#PRIORITISE MAIN INDUSTRY TECHS
+			modifier = { factor = 0 EAI_prioritise_main_industry = yes NOT = { EAI_resource_extraction_tech_focus = yes } }
 		}
 	}		
 	
@@ -1483,13 +1361,18 @@ technologies = {
 			position = { x = 0 y = 6 }
 		}
 		
-		ai_will_do = {
-			factor = 4
+		ai_will_do = { #EAI
+			factor = 300
+
+			#DATE
+			modifier = { factor = 0 date < 1940.8.1 }
 			
-			modifier = {
-				factor = 10
-				date > "1941.1.1"
-			}
+			#WEIGHT
+			modifier = { factor = 1.5 num_of_civilian_factories > 25 }
+			modifier = { factor = 1.5 has_war = no }
+			
+			#PRIORITISE MAIN INDUSTRY TECHS
+			modifier = { factor = 0 has_war = yes EAI_prioritise_main_industry = yes NOT = { EAI_resource_extraction_tech_focus = yes } }
 		}
 	}
 
@@ -1515,32 +1398,32 @@ technologies = {
 			position = { x = 2 y = 6 }
 		}
 		
-		ai_will_do = {
-			factor = 1
+		ai_will_do = { #EAI
+			factor = 200
+
+			#DATE
+			modifier = { factor = 0 date < 1941.1.1 }
 			
+			#WEIGHT
 			modifier = {
-				factor = 5.0
-				OR = {
-					oil > 0
-					aluminium > 0
-					rubber > 0
-					tungsten > 0
-					steel > 0
-					chromium > 0
-				}
+				factor = 2
+				EAI_resource_extraction_tech_focus = yes
 			}
-			
-			modifier = {
-				factor = 1.5
-				OR = {
-					oil > 8
-					aluminium > 8
-					rubber > 8
-					tungsten > 8
-					steel > 8
-					chromium > 8
-				}
+			modifier = { #these countries don't need resources that badly
+				factor = 0
+				oil < 50
+				rubber < 50
+				steel < 50
+				aluminium < 50
+				tungsten < 50
+				chromium < 50
 			}
+
+			#RESTRICTIONS
+			modifier = { factor = 0 NOT = { has_tech = excavation3 } }
+
+			#PRIORITISE MAIN INDUSTRY TECHS
+			modifier = { factor = 0 EAI_prioritise_main_industry = yes NOT = { EAI_resource_extraction_tech_focus = yes } }
 		}
 	}			
 	
@@ -1568,13 +1451,18 @@ technologies = {
 			position = { x = 0 y = 8 }
 		}
 		
-		ai_will_do = {
-			factor = 4
+		ai_will_do = { #EAI
+			factor = 300
+
+			#DATE
+			modifier = { factor = 0 date < 1942.8.1 }
 			
-			modifier = {
-				factor = 10
-				date > "1943.1.1"
-			}
+			#WEIGHT
+			modifier = { factor = 1.5 num_of_civilian_factories > 25 }
+			modifier = { factor = 1.5 has_war = no }
+			
+			#PRIORITISE MAIN INDUSTRY TECHS
+			modifier = { factor = 0 has_war = yes EAI_prioritise_main_industry = yes NOT = { EAI_resource_extraction_tech_focus = yes } }
 		}
 	}
 
@@ -1601,32 +1489,32 @@ technologies = {
 			position = { x = 2 y = 8 }
 		}
 		
-		ai_will_do = {
-			factor = 2
+		ai_will_do = { #EAI
+			factor = 200
+
+			#DATE
+			modifier = { factor = 0 date < 1943.1.1 }
 			
+			#WEIGHT
 			modifier = {
-				factor = 5.0
-				OR = {
-					oil > 0
-					aluminium > 0
-					rubber > 0
-					tungsten > 0
-					steel > 0
-					chromium > 0
-				}
+				factor = 2
+				EAI_resource_extraction_tech_focus = yes
 			}
-			
-			modifier = {
-				factor = 1.5
-				OR = {
-					oil > 8
-					aluminium > 8
-					rubber > 8
-					tungsten > 8
-					steel > 8
-					chromium > 8
-				}
+			modifier = { #these countries don't need resources that badly
+				factor = 0
+				oil < 50
+				rubber < 50
+				steel < 50
+				aluminium < 50
+				tungsten < 50
+				chromium < 50
 			}
+
+			#RESTRICTIONS
+			modifier = { factor = 0 NOT = { has_tech = excavation4 } }
+
+			#PRIORITISE MAIN INDUSTRY TECHS
+			modifier = { factor = 0 EAI_prioritise_main_industry = yes NOT = { EAI_resource_extraction_tech_focus = yes } }
 		}
 	}			
 }
