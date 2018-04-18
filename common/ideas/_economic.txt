@@ -183,7 +183,7 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
-				conscription = -0.03
+				conscription = -0.02
 				political_power_factor = -0.2
 				stability_factor = -0.05
 				consumer_goods_factor = 0.2
@@ -255,7 +255,7 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
-				conscription = -0.06
+				conscription = -0.05
 				political_power_factor = -0.4
 				stability_factor = -0.1
 				consumer_goods_factor = 0.1
