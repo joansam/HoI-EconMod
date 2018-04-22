@@ -14,6 +14,8 @@ ideas = {
 				consumer_goods_factor = 0.4
 				political_power_factor = 0.4
 				production_speed_buildings_factor = -1.0
+				industrial_capacity_factory = -0.7
+				industrial_capacity_dockyard = -0.7
 				generate_wargoal_tension = 1.00
 				join_faction_tension = 0.20
 				lend_lease_tension = 0.50
@@ -44,6 +46,8 @@ ideas = {
 				consumer_goods_factor = 0.35
 				political_power_factor = 0.3
 				production_speed_buildings_factor = -0.8
+				industrial_capacity_factory = -0.5
+				industrial_capacity_dockyard = -0.5
 				generate_wargoal_tension = 1.00
 				join_faction_tension = 0.20
 				send_volunteers_tension = 0.20
@@ -69,6 +73,8 @@ ideas = {
 				consumer_goods_factor = 0.3
 				political_power_factor = 0.2
 				production_speed_buildings_factor = -0.6
+				industrial_capacity_factory = -0.3
+				industrial_capacity_dockyard = -0.3
 			}
 			
 			default = yes
@@ -96,6 +102,8 @@ ideas = {
 				consumer_goods_factor = 0.25
 				political_power_factor = 0.1
 				production_speed_buildings_factor = -0.3
+				industrial_capacity_factory = -0.2
+				industrial_capacity_dockyard = -0.2
 			}
 			
 			cancel_if_invalid = no
@@ -134,7 +142,11 @@ ideas = {
 			modifier = {
 				political_power_factor = -0.1
 				consumer_goods_factor = 0.25
-				# production_speed_buildings_factor = 0.1
+				production_speed_buildings_factor = 0.1
+				production_speed_industrial_complex_factor = -0.1
+				conversion_cost_mil_to_civ_factor= 0.1
+				industrial_capacity_factory = -0.1
+				industrial_capacity_dockyard = -0.1
 			}
 			
 			cancel_if_invalid = no
@@ -188,6 +200,8 @@ ideas = {
 				stability_factor = -0.05
 				consumer_goods_factor = 0.2
 				production_speed_buildings_factor = 0.5
+				production_speed_industrial_complex_factor = -0.2
+				conversion_cost_mil_to_civ_factor= 0.2
 			}
 			
 			cancel_if_invalid = no
@@ -258,8 +272,10 @@ ideas = {
 				conscription = -0.05
 				political_power_factor = -0.4
 				stability_factor = -0.1
-				consumer_goods_factor = 0.1
+				consumer_goods_factor = 0.15
 				production_speed_buildings_factor = 0.8
+				production_speed_industrial_complex_factor = -0.3
+				conversion_cost_mil_to_civ_factor= 0.3
 
 			}
 			
