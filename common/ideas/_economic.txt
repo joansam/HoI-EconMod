@@ -212,6 +212,7 @@ ideas = {
 				stability_factor = -0.05
 				consumer_goods_factor = 0.2
 				production_speed_buildings_factor = 0.5
+				production_speed_industrial_complex_factor = -0.6
 			}
 			
 			cancel_if_invalid = no
@@ -273,6 +274,7 @@ ideas = {
 				stability_factor = -0.1
 				consumer_goods_factor = 0.15
 				production_speed_buildings_factor = 0.8
+				production_speed_industrial_complex_factor = -0.8
 			}
 			
 			cancel_if_invalid = no
