@@ -18,9 +18,8 @@ technologies = {
 		army_speed_factor = 0.10
 		enable_tactic = tactic_unexpected_thrust
 		org_loss_when_moving = -0.1
-		
 
-		doctrine = yes	
+		#doctrine = yes	
 		research_cost = 1.5
 
 		folder = {
@@ -34,11 +33,15 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 20 
-		}
-		
-		ai_research_weights = {
-			armor = 4.0
+			factor = 100
+			
+			modifier = { factor = 0 NOT = { has_country_flag = EAI_FOCUS/MW_doctrine } }
+			
+			#DATE
+			modifier = { factor = 0 date < 1936.2.1 }
+
+			#WEIGHT
+			modifier = { factor = 6 EAI_prioritise_land_doctrine = yes }
 		}
 	}
 	
@@ -57,7 +60,7 @@ technologies = {
 		}
 
 		
-		doctrine = yes	
+		#doctrine = yes	
 		research_cost = 3
 
 		categories = {
@@ -71,11 +74,15 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 20
-		}
-		
-		ai_research_weights = {
-			armor = 3.0
+			factor = 100
+
+			modifier = { factor = 0 NOT = { has_country_flag = EAI_FOCUS/MW_doctrine } }
+			
+			#DATE
+			modifier = { factor = 0 date < 1936.2.1 }
+
+			#WEIGHT
+			modifier = { factor = 6 EAI_prioritise_land_doctrine = yes }
 		}
 	}
 	
@@ -104,7 +111,7 @@ technologies = {
 		}
 
 		
-		doctrine = yes	
+		#doctrine = yes	
 		research_cost = 3
 
 		categories = {
@@ -118,11 +125,10 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 20
-		}
-		
-		ai_research_weights = {
-			armor = 2.0
+			factor = 100
+			
+			#WEIGHT
+			modifier = { factor = 6 EAI_prioritise_land_doctrine = yes }
 		}
 	}
 	
@@ -147,7 +153,7 @@ technologies = {
 		}
 
 		
-		doctrine = yes	
+		#doctrine = yes	
 		research_cost = 3
 
 		categories = {
@@ -161,14 +167,13 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 20
-		}
-		
-		ai_research_weights = {
-			armor = 1.0
-			defensive = -2.0
-			motorized_equipment = 3.0
-			cat_mechanized_equipment = 5.0
+			factor = 100
+			
+			#WEIGHT
+			modifier = { factor = 6 EAI_prioritise_land_doctrine = yes }
+			
+			#RESTRICTION
+			modifier = { factor = 0 has_country_flag = EAI_FOCUS/land_doctrine_right_path }
 		}
 	}
 	
@@ -184,7 +189,7 @@ technologies = {
 		}
 
 		
-		doctrine = yes	
+		#doctrine = yes	
 		research_cost = 3
 		
 		categories = {
@@ -198,12 +203,10 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 20
-		}
-		
-		ai_research_weights = {
-			armor = 2.0
-			defensive = -12.0
+			factor = 100
+
+			#WEIGHT
+			modifier = { factor = 6 EAI_prioritise_land_doctrine = yes }
 		}
 	}
 	
@@ -231,7 +234,7 @@ technologies = {
 		}
 
 		
-		doctrine = yes	
+		#doctrine = yes	
 		research_cost = 3
 		
 		categories = {
@@ -246,13 +249,10 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 20
-		}
-		
-		ai_research_weights = {
-			armor = 2.0
-			motorized_equipment = 2.0
-			cat_mechanized_equipment = 2.0
+			factor = 100
+
+			#WEIGHT
+			modifier = { factor = 6 EAI_prioritise_land_doctrine = yes }
 		}
 	}
 	
@@ -276,7 +276,7 @@ technologies = {
 		}
 
 		
-		doctrine = yes	
+		#doctrine = yes	
 		research_cost = 3
 		
 		categories = {
@@ -292,13 +292,13 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 20
-		}
-		
-		ai_research_weights = {
-			armor = 16.0
-			offensive = -1.0
-			cat_mechanized_equipment = 2.0
+			factor = 100
+
+			#WEIGHT
+			modifier = { factor = 6 EAI_prioritise_land_doctrine = yes }
+			
+			#RESTRICTION
+			modifier = { factor = 0 has_country_flag = EAI_FOCUS/land_doctrine_left_path }
 		}
 	}
 	
@@ -319,7 +319,7 @@ technologies = {
 		}
 
 		
-		doctrine = yes	
+		#doctrine = yes	
 		research_cost = 3
 
 		categories = {
@@ -333,13 +333,10 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 20
-		}
-		
-		ai_research_weights = {
-			armor = 2.5
-			offensive = -2.0
-			cat_mechanized_equipment = 1.5
+			factor = 100
+			
+			#WEIGHT
+			modifier = { factor = 6 EAI_prioritise_land_doctrine = yes }
 		}
 	}
 	
@@ -369,7 +366,7 @@ technologies = {
 		}
 
 		
-		doctrine = yes	
+		#doctrine = yes	
 		research_cost = 3
 
 		categories = {
@@ -384,12 +381,13 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 20
-		}
-		
-		ai_research_weights = {
-			armor = 2.5
-			cat_mechanized_equipment = 1.5
+			factor = 100
+			
+			#WEIGHT
+			modifier = { factor = 6 EAI_prioritise_land_doctrine = yes }
+			
+			#RESTRICTION
+			modifier = { factor = 0 has_country_flag = EAI_FOCUS/land_doctrine_left_path }
 		}
 	}
 	
@@ -414,7 +412,7 @@ technologies = {
 		}
 
 		
-		doctrine = yes	
+		#doctrine = yes	
 		research_cost = 3
 		
 		categories = {
@@ -429,11 +427,10 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 20
-		}
-		
-		ai_research_weights = {
-			armor = 3.0
+			factor = 100
+			
+			#WEIGHT
+			modifier = { factor = 6 EAI_prioritise_land_doctrine = yes }
 		}
 	}
 	
@@ -457,7 +454,7 @@ technologies = {
 		}
 
 		
-		doctrine = yes	
+		#doctrine = yes	
 		research_cost = 3
 		
 		categories = {
@@ -472,11 +469,14 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 20
-		}
-		
-		ai_research_weights = {
-			armor = 2.0
+			factor = 100
+			
+			modifier = { factor = 0 NOT = { EAI_major_country = yes } }
+			
+			modifier = { factor = 0 has_tech = volkssturm }
+			
+			#WEIGHT
+			modifier = { factor = 6 EAI_prioritise_land_doctrine = yes }
 		}
 	}
 	
@@ -491,7 +491,7 @@ technologies = {
 		}
 
 		
-		doctrine = yes	
+		#doctrine = yes	
 		research_cost = 3
 		
 		categories = {
@@ -506,11 +506,10 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 20
-		}
-		
-		ai_research_weights = {
-			armor = 2.0
+			factor = 100
+			
+			#WEIGHT
+			modifier = { factor = 6 EAI_prioritise_land_doctrine = yes }
 		}
 	}
 	
@@ -525,7 +524,7 @@ technologies = {
 			default_morale = 0.2
 		}
 		
-		doctrine = yes	
+		#doctrine = yes	
 		research_cost = 3
 		
 		categories = {
@@ -540,11 +539,10 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 20
-		}
-		
-		ai_research_weights = {
-			armor = 2.0
+			factor = 100
+			
+			#WEIGHT
+			modifier = { factor = 6 EAI_prioritise_land_doctrine = yes }
 		}
 	}
 	
@@ -563,7 +561,7 @@ technologies = {
 		}
 
 		
-		doctrine = yes	
+		#doctrine = yes	
 		research_cost = 3
 		
 		categories = {
@@ -578,11 +576,11 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 20
-		}
-		
-		ai_research_weights = {
-			armor = 2.0
+			factor = 100
+			modifier = { factor = 0 EAI_major_country = yes }
+			
+			#WEIGHT
+			modifier = { factor = 6 EAI_prioritise_land_doctrine = yes }
 		}
 	}
 	
@@ -596,7 +594,7 @@ technologies = {
 		}
 
 		
-		doctrine = yes	
+		#doctrine = yes	
 		research_cost = 3
 		
 		categories = {
@@ -611,11 +609,10 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 20
-		}
-		
-		ai_research_weights = {
-			armor = 2.0
+			factor = 100
+			
+			#WEIGHT
+			modifier = { factor = 6 EAI_prioritise_land_doctrine = yes }
 		}
 	}
 	
@@ -627,7 +624,7 @@ technologies = {
 		
 		enable_tactic = tactic_guerrilla_tactics
 		
-		doctrine = yes	
+		#doctrine = yes	
 		research_cost = 3
 		
 		categories = {
@@ -642,11 +639,7 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 20
-		}
-		
-		ai_research_weights = {
-			armor = 2.0
+			factor = 1
 		}
 	}
 	
@@ -666,7 +659,7 @@ technologies = {
 		
 		enable_tactic = tactic_barrage
 			
-		doctrine = yes	
+		#doctrine = yes	
 		research_cost = 1.5
 		
 		categories = {
@@ -681,11 +674,15 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 20
-		}
-		
-		ai_research_weights = {
-			artillery = 4.0
+			factor = 100
+			
+			modifier = { factor = 0 NOT = { has_country_flag = EAI_FOCUS/SF_doctrine } }
+			
+			#DATE
+			modifier = { factor = 0 date < 1936.2.1 }
+
+			#WEIGHT
+			modifier = { factor = 6 EAI_prioritise_land_doctrine = yes }
 		}
 	}
 	
@@ -702,7 +699,7 @@ technologies = {
 			research_cost_coeff = 1
 		}
 		
-		doctrine = yes	
+		#doctrine = yes	
 		research_cost = 3
 
 		categories = {
@@ -716,11 +713,15 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 20
-		}
-		
-		ai_research_weights = {
-			artillery = 3.0
+			factor = 100
+			
+			modifier = { factor = 0 NOT = { has_country_flag = EAI_FOCUS/SF_doctrine } }
+			
+			#DATE
+			modifier = { factor = 0 date < 1936.2.1 }
+
+			#WEIGHT
+			modifier = { factor = 6 EAI_prioritise_land_doctrine = yes }
 		}
 	}
 	
@@ -743,7 +744,7 @@ technologies = {
 		}
 
 		
-		doctrine = yes	
+		#doctrine = yes	
 		research_cost = 3
 		
 		categories = {
@@ -758,11 +759,10 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 20
-		}
-		
-		ai_research_weights = {
-			artillery = 2.0
+			factor = 100
+			
+			#WEIGHT
+			modifier = { factor = 6 EAI_prioritise_land_doctrine = yes }
 		}
 	}
 	
@@ -784,7 +784,7 @@ technologies = {
 		}
 
 		
-		doctrine = yes	
+		#doctrine = yes	
 		research_cost = 3
 		
 		categories = {
@@ -799,11 +799,10 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 20
-		}
-		
-		ai_research_weights = {
-			artillery = 1.0
+			factor = 100
+			
+			#WEIGHT
+			modifier = { factor = 6 EAI_prioritise_land_doctrine = yes }
 		}
 	}
 	
@@ -821,7 +820,7 @@ technologies = {
 			research_cost_coeff = 1
 		}
 
-		doctrine = yes	
+		#doctrine = yes	
 		research_cost = 3
 		
 		categories = {
@@ -836,11 +835,10 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 20
-		}
-		
-		ai_research_weights = {
-			artillery = 1.0
+			factor = 100
+			
+			#WEIGHT
+			modifier = { factor = 6 EAI_prioritise_land_doctrine = yes }
 		}
 	}
 	
@@ -860,7 +858,7 @@ technologies = {
 		}
 
 		
-		doctrine = yes	
+		#doctrine = yes	
 		research_cost = 3
 		
 		categories = {
@@ -875,11 +873,7 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 20
-		}
-		
-		ai_research_weights = {
-			artillery = 1.0
+			factor = 0
 		}
 	}
 	
@@ -897,7 +891,7 @@ technologies = {
 		}
 
 		
-		doctrine = yes	
+		#doctrine = yes	
 		research_cost = 3
 		
 		categories = {
@@ -912,11 +906,10 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 20
-		}
-		
-		ai_research_weights = {
-			artillery = 1.0
+			factor = 100
+			
+			#WEIGHT
+			modifier = { factor = 6 EAI_prioritise_land_doctrine = yes }
 		}
 	}
 	
@@ -940,7 +933,7 @@ technologies = {
 		}
 
 		
-		doctrine = yes	
+		#doctrine = yes	
 		research_cost = 3
 		
 		categories = {
@@ -955,11 +948,10 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 20
-		}
-		
-		ai_research_weights = {
-			artillery = 1.0
+			factor = 100
+			
+			#WEIGHT
+			modifier = { factor = 6 EAI_prioritise_land_doctrine = yes }
 		}
 	}
 	
@@ -979,7 +971,7 @@ technologies = {
 		}
 
 		
-		doctrine = yes	
+		#doctrine = yes	
 		research_cost = 3
 		
 		categories = {
@@ -994,11 +986,13 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 20
-		}
-		
-		ai_research_weights = {
-			artillery = 1.0
+			factor = 100
+			
+			#WEIGHT
+			modifier = { factor = 6 EAI_prioritise_land_doctrine = yes }
+			
+			#RESTRICTION
+			modifier = { factor = 0 has_country_flag = EAI_FOCUS/land_doctrine_right_path }
 		}
 	}
 	
@@ -1018,7 +1012,7 @@ technologies = {
 		}
 
 		
-		doctrine = yes	
+		#doctrine = yes	
 		research_cost = 3
 		
 		categories = {
@@ -1033,11 +1027,10 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 20
-		}
-		
-		ai_research_weights = {
-			artillery = 1.0
+			factor = 100
+			
+			#WEIGHT
+			modifier = { factor = 6 EAI_prioritise_land_doctrine = yes }
 		}
 	}
 	
@@ -1053,7 +1046,7 @@ technologies = {
 		}
 
 		
-		doctrine = yes	
+		#doctrine = yes	
 		research_cost = 3
 		
 		categories = {
@@ -1068,11 +1061,10 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 20
-		}
-		
-		ai_research_weights = {
-			artillery = 1.0
+			factor = 100
+			
+			#WEIGHT
+			modifier = { factor = 6 EAI_prioritise_land_doctrine = yes }
 		}
 	}
 	
@@ -1085,7 +1077,7 @@ technologies = {
 		#combat advantage when air superior
 		army_bonus_air_superiority_factor = 0.20
 		
-		doctrine = yes	
+		#doctrine = yes	
 		research_cost = 3
 		
 		categories = {
@@ -1100,11 +1092,10 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 20
-		}
-		
-		ai_research_weights = {
-			artillery = 1.0
+			factor = 100
+			
+			#WEIGHT
+			modifier = { factor = 6 EAI_prioritise_land_doctrine = yes }
 		}
 	}
 	
@@ -1126,7 +1117,7 @@ technologies = {
 		}
 
 		
-		doctrine = yes	
+		#doctrine = yes	
 		research_cost = 3
 		
 		categories = {
@@ -1141,11 +1132,13 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 20
-		}
-		
-		ai_research_weights = {
-			artillery = 1.0
+			factor = 100
+
+			#WEIGHT
+			modifier = { factor = 6 EAI_prioritise_land_doctrine = yes }
+			
+			#RESTRICTION
+			modifier = { factor = 0 has_country_flag = EAI_FOCUS/land_doctrine_left_path }
 		}
 	}
 	
@@ -1163,7 +1156,7 @@ technologies = {
 		}
 
 		
-		doctrine = yes	
+		#doctrine = yes	
 		research_cost = 3
 		
 		categories = {
@@ -1178,11 +1171,10 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 20
-		}
-		
-		ai_research_weights = {
-			artillery = 1.0
+			factor = 100
+			
+			#WEIGHT
+			modifier = { factor = 6 EAI_prioritise_land_doctrine = yes }
 		}
 	}
 	
@@ -1208,7 +1200,7 @@ technologies = {
 		}
 
 		
-		doctrine = yes	
+		#doctrine = yes	
 		research_cost = 3
 		
 		categories = {
@@ -1223,11 +1215,10 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 20
-		}
-		
-		ai_research_weights = {
-			artillery = 1.0
+			factor = 100
+			
+			#WEIGHT
+			modifier = { factor = 6 EAI_prioritise_land_doctrine = yes }
 		}
 	}
 	
@@ -1243,7 +1234,7 @@ technologies = {
 		}
 		enable_tactic = tactic_breakthrough
 				
-		doctrine = yes	
+		#doctrine = yes	
 		research_cost = 3
 		
 		categories = {
@@ -1258,11 +1249,10 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 20
-		}
-		
-		ai_research_weights = {
-			artillery = 1.0
+			factor = 100
+			
+			#WEIGHT
+			modifier = { factor = 6 EAI_prioritise_land_doctrine = yes }
 		}
 	}
 	
@@ -1280,7 +1270,7 @@ technologies = {
 			research_cost_coeff = 1
 		}
 
-		doctrine = yes	
+		#doctrine = yes	
 		research_cost = 1.5
 		
 		categories = {
@@ -1295,12 +1285,15 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 20
-		}
-		
-		ai_research_weights = {
-			infantry_weapons = 1.5
-			motorized_equipment = 1.0
+			factor = 100
+			
+			modifier = { factor = 0 NOT = { has_country_flag = EAI_FOCUS/GB_doctrine } }
+			
+			#DATE
+			modifier = { factor = 0 date < 1936.2.1 }
+
+			#WEIGHT
+			modifier = { factor = 6 EAI_prioritise_land_doctrine = yes }
 		}
 	}
 	
@@ -1315,7 +1308,7 @@ technologies = {
 		#planning max bonus increase
 		max_planning = 0.1
 
-		doctrine = yes	
+		#doctrine = yes	
 		research_cost = 3
 		
 		categories = {
@@ -1330,17 +1323,15 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 20
+			factor = 100
+
+			modifier = { factor = 0 NOT = { has_country_flag = EAI_FOCUS/GB_doctrine } }
 			
-			modifier = {
-				factor = 0.25
-				has_idea = FRA_victors_of_wwi
-			}
-		}
-		
-		ai_research_weights = {
-			infantry_weapons = 2.5
-			motorized_equipment = 2.0
+			#DATE
+			modifier = { factor = 0 date < 1936.2.1 }
+
+			#WEIGHT
+			modifier = { factor = 6 EAI_prioritise_land_doctrine = yes }
 		}
 	}
 	
@@ -1358,7 +1349,7 @@ technologies = {
 			research_cost_coeff = 1
 		}
 
-		doctrine = yes	
+		#doctrine = yes	
 		research_cost = 3
 		
 		categories = {
@@ -1373,12 +1364,10 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 20
-		}
-		
-		ai_research_weights = {
-			infantry_weapons = 1.5
-			motorized_equipment = 1.0
+			factor = 100
+
+			#WEIGHT
+			modifier = { factor = 6 EAI_prioritise_land_doctrine = yes }
 		}
 	}
 	
@@ -1400,7 +1389,7 @@ technologies = {
 			research_cost_coeff = 1
 		}
 
-		doctrine = yes	
+		#doctrine = yes	
 		research_cost = 3
 		
 		categories = {
@@ -1415,12 +1404,10 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 20
-		}
-		
-		ai_research_weights = {
-			infantry_weapons = 1.5
-			motorized_equipment = 1.0
+			factor = 100
+
+			#WEIGHT
+			modifier = { factor = 6 EAI_prioritise_land_doctrine = yes }
 		}
 	}
 	
@@ -1446,7 +1433,7 @@ technologies = {
 			research_cost_coeff = 1
 		}
 
-		doctrine = yes	
+		#doctrine = yes	
 		research_cost = 3
 		
 		categories = {
@@ -1461,13 +1448,13 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 20
-		}
-		
-		ai_research_weights = {
-			infantry_weapons = 1.5
-			motorized_equipment = 1.0
-			cat_mechanized_equipment = 1.0
+			factor = 100
+	
+			#WEIGHT
+			modifier = { factor = 6 EAI_prioritise_land_doctrine = yes }
+			
+			#RESTRICTION
+			modifier = { factor = 0 has_country_flag = EAI_FOCUS/land_doctrine_right_path }
 		}
 	}
 	
@@ -1482,7 +1469,7 @@ technologies = {
 			research_cost_coeff = 1
 		}
 
-		doctrine = yes	
+		#doctrine = yes	
 		research_cost = 3
 		
 		categories = {
@@ -1497,13 +1484,10 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 20
-		}
-		
-		ai_research_weights = {
-			infantry_weapons = 1.5
-			motorized_equipment = 1.0
-			cat_mechanized_equipment = 1.0
+			factor = 100
+			
+			#WEIGHT
+			modifier = { factor = 6 EAI_prioritise_land_doctrine = yes }
 		}
 	}
 	
@@ -1521,7 +1505,7 @@ technologies = {
 			research_cost_coeff = 1
 		}
 
-		doctrine = yes	
+		#doctrine = yes	
 		research_cost = 3
 		
 		categories = {
@@ -1536,12 +1520,10 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 20
-		}
-		
-		ai_research_weights = {
-			infantry_weapons = 1.5
-			motorized_equipment = 1.0
+			factor = 100
+			
+			#WEIGHT
+			modifier = { factor = 6 EAI_prioritise_land_doctrine = yes }
 		}
 	}
 	
@@ -1559,7 +1541,7 @@ technologies = {
 			research_cost_coeff = 1
 		}
 
-		doctrine = yes	
+		#doctrine = yes	
 		research_cost = 3
 		
 		categories = {
@@ -1574,13 +1556,10 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 20
-		}
-		
-		ai_research_weights = {
-			infantry_weapons = 1.5
-			motorized_equipment = 1.0
-			cat_mechanized_equipment = 1.0
+			factor = 100
+			
+			#WEIGHT
+			modifier = { factor = 6 EAI_prioritise_land_doctrine = yes }
 		}
 	}
 	
@@ -1594,7 +1573,7 @@ technologies = {
 			research_cost_coeff = 1
 		}
 
-		doctrine = yes	
+		#doctrine = yes	
 		research_cost = 3
 		
 		categories = {
@@ -1609,12 +1588,10 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 20
-		}
-		
-		ai_research_weights = {
-			infantry_weapons = 1.5
-			motorized_equipment = 1.0
+			factor = 100
+			
+			#WEIGHT
+			modifier = { factor = 6 EAI_prioritise_land_doctrine = yes }
 		}
 	}
 	
@@ -1628,7 +1605,7 @@ technologies = {
 			max_organisation = 1
 		}
 
-		doctrine = yes	
+		#doctrine = yes	
 		research_cost = 3
 		
 		categories = {
@@ -1643,12 +1620,10 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 20
-		}
-		
-		ai_research_weights = {
-			infantry_weapons = 1.5
-			motorized_equipment = 1.0
+			factor = 100
+			
+			#WEIGHT
+			modifier = { factor = 6 EAI_prioritise_land_doctrine = yes }
 		}
 	}
 	
@@ -1669,7 +1644,7 @@ technologies = {
 			research_cost_coeff = 1
 		}
 
-		doctrine = yes	
+		#doctrine = yes	
 		research_cost = 3
 		
 		categories = {
@@ -1684,12 +1659,13 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 20
-		}
-		
-		ai_research_weights = {
-			infantry_weapons = 1.5
-			motorized_equipment = 1.0
+			factor = 100
+
+			#WEIGHT
+			modifier = { factor = 6 EAI_prioritise_land_doctrine = yes }
+			
+			#RESTRICTION
+			modifier = { factor = 0 has_country_flag = EAI_FOCUS/land_doctrine_left_path }
 		}
 	}
 	
@@ -1711,7 +1687,7 @@ technologies = {
 			research_cost_coeff = 1
 		}
 
-		doctrine = yes	
+		#doctrine = yes	
 		research_cost = 3
 		
 		categories = {
@@ -1726,12 +1702,10 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 20
-		}
-		
-		ai_research_weights = {
-			infantry_weapons = 1.5
-			motorized_equipment = 1.0
+			factor = 100
+			
+			#WEIGHT
+			modifier = { factor = 6 EAI_prioritise_land_doctrine = yes }
 		}
 	}
 	
@@ -1745,7 +1719,7 @@ technologies = {
 			research_cost_coeff = 1
 		}
 
-		doctrine = yes	
+		#doctrine = yes	
 		research_cost = 3
 		
 		categories = {
@@ -1760,12 +1734,10 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 20
-		}
-		
-		ai_research_weights = {
-			infantry_weapons = 1.5
-			motorized_equipment = 1.0
+			factor = 100
+			
+			#WEIGHT
+			modifier = { factor = 6 EAI_prioritise_land_doctrine = yes }
 		}
 	}
 	
@@ -1782,7 +1754,7 @@ technologies = {
 		
 		
 
-		doctrine = yes	
+		#doctrine = yes	
 		research_cost = 3
 		
 		categories = {
@@ -1797,12 +1769,10 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 20
-		}
-		
-		ai_research_weights = {
-			infantry_weapons = 1.5
-			motorized_equipment = 1.0
+			factor = 100
+			
+			#WEIGHT
+			modifier = { factor = 6 EAI_prioritise_land_doctrine = yes }
 		}
 	}
 	
@@ -1819,7 +1789,7 @@ technologies = {
 			research_cost_coeff = 1
 		}
 
-		doctrine = yes	
+		#doctrine = yes	
 		research_cost = 3
 		
 		categories = {
@@ -1834,12 +1804,10 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 20
-		}
-		
-		ai_research_weights = {
-			infantry_weapons = 1.5
-			motorized_equipment = 1.0
+			factor = 100
+			
+			#WEIGHT
+			modifier = { factor = 6 EAI_prioritise_land_doctrine = yes }
 		}
 	}
 	
@@ -1851,7 +1819,7 @@ technologies = {
 			recon = 1 
 		} 
 
-		doctrine = yes	
+		#doctrine = yes	
 		research_cost = 3
 		
 		categories = {
@@ -1866,12 +1834,10 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 20
-		}
-		
-		ai_research_weights = {
-			infantry_weapons = 1.5
-			motorized_equipment = 1.0
+			factor = 100
+			
+			#WEIGHT
+			modifier = { factor = 6 EAI_prioritise_land_doctrine = yes }
 		}
 	}
 	
@@ -1887,8 +1853,8 @@ technologies = {
 		max_dig_in = 10
 		land_reinforce_rate = 0.02
 		minimum_training_level = -0.1		
-		
-		doctrine = yes	
+
+		#doctrine = yes	
 		research_cost = 1.5
 		
 		categories = {
@@ -1903,11 +1869,15 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 20
-		}
-		
-		ai_research_weights = {
-			industry = 2.0
+			factor = 100
+
+			modifier = { factor = 0 NOT = { has_country_flag = EAI_FOCUS/MA_doctrine } }
+			
+			#DATE
+			modifier = { factor = 0 date < 1936.2.1 }
+
+			#WEIGHT
+			modifier = { factor = 6 EAI_prioritise_land_doctrine = yes }
 		}
 	}
 	
@@ -1923,7 +1893,7 @@ technologies = {
 			research_cost_coeff = 1
 		}
 
-		doctrine = yes	
+		#doctrine = yes	
 		research_cost = 3
 		
 		categories = {
@@ -1938,11 +1908,15 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 20
-		}
-		
-		ai_research_weights = {
-			industry = 2.0
+			factor = 100
+
+			modifier = { factor = 0 NOT = { has_country_flag = EAI_FOCUS/MA_doctrine } }
+			
+			#DATE
+			modifier = { factor = 0 date < 1936.2.1 }
+
+			#WEIGHT
+			modifier = { factor = 6 EAI_prioritise_land_doctrine = yes }
 		}
 	}
 	
@@ -1964,7 +1938,7 @@ technologies = {
 			research_cost_coeff = 1
 		}
 
-		doctrine = yes	
+		#doctrine = yes	
 		research_cost = 3
 		
 		categories = {
@@ -1979,11 +1953,10 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 20
-		}
-		
-		ai_research_weights = {
-			industry = 2.0
+			factor = 100
+			
+			#WEIGHT
+			modifier = { factor = 6 EAI_prioritise_land_doctrine = yes }
 		}
 	}
 	
@@ -2004,7 +1977,7 @@ technologies = {
 			research_cost_coeff = 1
 		}
 
-		doctrine = yes	
+		#doctrine = yes	
 		research_cost = 3
 		
 		categories = {
@@ -2019,25 +1992,13 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 20
-
-			modifier = {
-				factor = 0.4
-
-				OR = {
-					tag = CHI
-					tag = PRC
-					tag = XSM
-					tag = SIK
-					tag = GXC
-					tag = SHX
-					tag = YUN
-				}
-			}
-		}
-		
-		ai_research_weights = {
-			industry = 2.0
+			factor = 100
+			
+			#WEIGHT
+			modifier = { factor = 6 EAI_prioritise_land_doctrine = yes }
+			
+			#RESTRICTION
+			modifier = { factor = 0 NOT = { has_country_flag = EAI_FOCUS/land_doctrine_left_path } }
 		}
 	}
 	
@@ -2054,7 +2015,7 @@ technologies = {
 			research_cost_coeff = 1
 		}
 
-		doctrine = yes	
+		#doctrine = yes	
 		research_cost = 3
 		
 		categories = {
@@ -2069,11 +2030,10 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 20
-		}
-		
-		ai_research_weights = {
-			industry = 2.0
+			factor = 100
+			
+			#WEIGHT
+			modifier = { factor = 6 EAI_prioritise_land_doctrine = yes }
 		}
 	}
 	
@@ -2089,7 +2049,7 @@ technologies = {
 			research_cost_coeff = 1
 		}
 
-		doctrine = yes	
+		#doctrine = yes	
 		research_cost = 3
 		
 		categories = {
@@ -2104,11 +2064,10 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 20
-		}
-		
-		ai_research_weights = {
-			industry = 2.0
+			factor = 100
+			
+			#WEIGHT
+			modifier = { factor = 6 EAI_prioritise_land_doctrine = yes }
 		}
 	}
 	
@@ -2128,7 +2087,7 @@ technologies = {
 			research_cost_coeff = 1
 		}
 
-		doctrine = yes	
+		#doctrine = yes	
 		research_cost = 3
 		
 		categories = {
@@ -2143,11 +2102,10 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 20
-		}
-		
-		ai_research_weights = {
-			industry = 2.0
+			factor = 100
+			
+			#WEIGHT
+			modifier = { factor = 6 EAI_prioritise_land_doctrine = yes }
 		}
 	}
 	
@@ -2169,7 +2127,7 @@ technologies = {
 			research_cost_coeff = 1
 		}
 
-		doctrine = yes	
+		#doctrine = yes	
 		research_cost = 3
 		
 		categories = {
@@ -2184,11 +2142,10 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 20
-		}
-		
-		ai_research_weights = {
-			industry = 2.0
+			factor = 100
+			
+			#WEIGHT
+			modifier = { factor = 6 EAI_prioritise_land_doctrine = yes }
 		}
 	}
 	
@@ -2215,7 +2172,7 @@ technologies = {
 			research_cost_coeff = 1
 		}
 
-		doctrine = yes	
+		#doctrine = yes	
 		research_cost = 3
 		
 		categories = {
@@ -2230,12 +2187,10 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 20
-		}
-		
-		ai_research_weights = {
-			industry = 2.0
-			cat_mechanized_equipment = 3.0
+			factor = 100
+			
+			#WEIGHT
+			modifier = { factor = 6 EAI_prioritise_land_doctrine = yes }
 		}
 	}
 	
@@ -2246,7 +2201,7 @@ technologies = {
 		
 		enable_tactic = tactic_backhand_blow
 
-		doctrine = yes	
+		#doctrine = yes	
 		research_cost = 3
 		
 		categories = {
@@ -2261,11 +2216,10 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 20
-		}
-		
-		ai_research_weights = {
-			industry = 2.0
+			factor = 100
+			
+			#WEIGHT
+			modifier = { factor = 6 EAI_prioritise_land_doctrine = yes }
 		}
 	}
 	
@@ -2290,7 +2244,7 @@ technologies = {
 			research_cost_coeff = 1
 		}
 
-		doctrine = yes	
+		#doctrine = yes	
 		research_cost = 3
 		
 		categories = {
@@ -2305,26 +2259,13 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 20
-
-			modifier = {
-				factor = 0.6
-
-				OR = {
-					tag = CHI
-					tag = PRC
-					tag = XSM
-					tag = SIK
-					tag = GXC
-					tag = SHX
-					tag = YUN
-				}
-			}
-
-		}
-		
-		ai_research_weights = {
-			industry = 2.0
+			factor = 100
+			
+			#WEIGHT
+			modifier = { factor = 6 EAI_prioritise_land_doctrine = yes }
+			
+			#RESTRICTION
+			modifier = { factor = 0 has_country_flag = EAI_FOCUS/land_doctrine_left_path }
 		}
 	}
 	
@@ -2340,7 +2281,7 @@ technologies = {
 			research_cost_coeff = 1
 		}
 
-		doctrine = yes	
+		#doctrine = yes	
 		research_cost = 3
 		
 		categories = {
@@ -2355,11 +2296,10 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 20
-		}
-		
-		ai_research_weights = {
-			industry = 2.0
+			factor = 100
+			
+			#WEIGHT
+			modifier = { factor = 6 EAI_prioritise_land_doctrine = yes }
 		}
 	}
 	
@@ -2378,7 +2318,7 @@ technologies = {
 			research_cost_coeff = 1
 		}
 
-		doctrine = yes	
+		#doctrine = yes	
 		research_cost = 3
 		
 		categories = {
@@ -2393,11 +2333,10 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 20
-		}
-		
-		ai_research_weights = {
-			industry = 2.0
+			factor = 100
+			
+			#WEIGHT
+			modifier = { factor = 6 EAI_prioritise_land_doctrine = yes }
 		}
 	}
 	
@@ -2416,7 +2355,7 @@ technologies = {
 			research_cost_coeff = 1
 		}
 
-		doctrine = yes	
+		#doctrine = yes	
 		research_cost = 3
 		
 		categories = {
@@ -2431,12 +2370,10 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 20
-		}
-		
-		ai_research_weights = {
-			infantry_weapons = 1.0
-			industry = 2.0
+			factor = 100
+			
+			#WEIGHT
+			modifier = { factor = 6 EAI_prioritise_land_doctrine = yes }
 		}
 	}
 	
@@ -2451,7 +2388,7 @@ technologies = {
 		
 		enable_tactic = tactic_guerrilla_tactics
 		
-		doctrine = yes	
+		#doctrine = yes	
 		research_cost = 3
 		
 		categories = {
@@ -2465,11 +2402,10 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 20
-		}
-		
-		ai_research_weights = {
-			industry = 2.0
+			factor = 100
+			
+			#WEIGHT
+			modifier = { factor = 6 EAI_prioritise_land_doctrine = yes }
 		}
 	}
 	
